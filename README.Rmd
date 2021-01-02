@@ -40,7 +40,7 @@ devtools::install_github("Athanasiamo/colorhex")
 ```
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+### Single colors
 
 ```{r example, fig.width = 12}
 library(colorhex)
@@ -50,14 +50,23 @@ x
 plot(x)
 ```
 
+```{r "pop-cols", , fig.width = 12, fig.height=12}
+x <- get_popular_colors()
+x
+scales::show_col(x)
+```
+
+### Palettes
+
 ```{r "latest", fig.height=10}
 latest <- get_latest_palettes()
 plot(latest)
 ```
 
-```{r "popular", fig.height=12}
+```{r "popular-palettes", fig.height=12}
 popular <- get_popular_palettes()
 plot(popular)
 ```
+
 
 

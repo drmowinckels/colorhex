@@ -92,7 +92,9 @@
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
-<p>This is a basic example which shows you how to solve a common problem:</p>
+<div id="single-colors" class="section level3">
+<h3 class="hasAnchor">
+<a href="#single-colors" class="anchor"></a>Single colors</h3>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/Athanasiamo/colorhex">colorhex</a></span><span class="op">)</span>
 
@@ -107,13 +109,35 @@
 <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/README-example-1.png" width="100%"></p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_popular_colors.html">get_popular_colors</a></span><span class="op">(</span><span class="op">)</span>
+<span class="va">x</span>
+<span class="co">#&gt;  [1] "#696969" "#bada55" "#7fe5f0" "#ff0000" "#ff80ed" "#407294" "#cbcba9"</span>
+<span class="co">#&gt;  [8] "#ffffff" "#420420" "#133337" "#065535" "#c0c0c0" "#5ac18e" "#000000"</span>
+<span class="co">#&gt; [15] "#666666" "#dcedc1" "#f7347a" "#576675" "#ffc0cb" "#ffe4e1" "#696966"</span>
+<span class="co">#&gt; [22] "#008080" "#ffd700" "#e6e6fa" "#ffa500" "#00ffff" "#ff7373" "#40e0d0"</span>
+<span class="co">#&gt; [29] "#0000ff" "#f0f8ff" "#d3ffce" "#b0e0e6" "#c6e2ff" "#faebd7" "#003366"</span>
+<span class="co">#&gt; [36] "#fa8072" "#ffff00" "#7fffd4" "#ffb6c1" "#800000" "#c39797" "#800080"</span>
+<span class="co">#&gt; [43] "#f08080" "#00ff00" "#eeeeee" "#fff68f" "#cccccc" "#ffc3a0" "#333333"</span>
+<span class="co">#&gt; [50] "#20b2aa" "#66cdaa" "#ff6666" "#ff00ff" "#ffdab9" "#4ca3dd" "#c0d6e4"</span>
+<span class="co">#&gt; [57] "#468499" "#ff7f50" "#f6546a" "#afeeee" "#008000" "#660066" "#cbbeb5"</span>
+<span class="co">#&gt; [64] "#00ced1" "#b6fcd5" "#0e2f44" "#088da5" "#990000" "#b4eeb4" "#daa520"</span>
+<span class="co">#&gt; [71] "#f5f5f5" "#101010" "#808080" "#8b0000" "#6897bb" "#ffff66" "#000080"</span>
+<span class="co">#&gt; [78] "#81d8d0" "#f5f5dc" "#ccff00" "#ff4040" "#dddddd" "#66cccc" "#8a2be2"</span>
+<span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org//reference/show_col.html">show_col</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></code></pre></div>
+<p><img src="reference/figures/README-pop-cols-1.png" width="100%"></p>
+</div>
+<div id="palettes" class="section level3">
+<h3 class="hasAnchor">
+<a href="#palettes" class="anchor"></a>Palettes</h3>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">latest</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_latest_palettes.html">get_latest_palettes</a></span><span class="op">(</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">latest</span><span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/README-latest-1.png" width="100%"></p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">popular</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_popular_palettes.html">get_popular_palettes</a></span><span class="op">(</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">popular</span><span class="op">)</span></code></pre></div>
-<p><img src="reference/figures/README-popular-1.png" width="100%"></p>
+<p><img src="reference/figures/README-popular-palettes-1.png" width="100%"></p>
+</div>
 </div>
 </div>
   </div>

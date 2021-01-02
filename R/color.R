@@ -1,6 +1,6 @@
 #' Get popular colour
 #'
-#' color-hex.com has a list of colours
+#' www.color-hex.com has a list of colours
 #' that have been liked by the most users.
 #' This function will retrieve all of these.
 #'
@@ -48,9 +48,9 @@ randcol <- function(){
 #' @export
 #'
 #' @examples
-#' get_colour("#470f0f")
-#' get_colour("#f2f2f2")
-get_colour <- function(hex){
+#' get_color("#470f0f")
+#' get_color("#f2f2f2")
+get_color <- function(hex){
   hex <- fix_hex(hex)
   stopifnot(is_hex(hex))
 

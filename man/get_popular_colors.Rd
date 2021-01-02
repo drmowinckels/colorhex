@@ -10,7 +10,7 @@ get_popular_colors()
 character vector of hex colours
 }
 \description{
-color-hex.com has a list of colours
+www.color-hex.com has a list of colours
 that have been liked by the most users.
 This function will retrieve all of these.
 }

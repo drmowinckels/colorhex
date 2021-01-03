@@ -68,5 +68,51 @@ popular <- get_popular_palettes()
 plot(popular)
 ```
 
+### ggplot2 scales
+```{r warning=FALSE}
+library(ggplot2)
+
+ggplot(mtcars, aes(mpg)) +
+   geom_density(aes(fill = disp, group = disp)) +
+   scale_fill_palettehex_c(popular)
+
+ggplot(mtcars, aes(mpg)) +
+  geom_density(aes(fill = disp, group = disp)) +
+  scale_fill_palettehex_c(popular, 3)
+
+ggplot(mtcars, aes(mpg, disp, colour = factor(cyl))) +
+   geom_point() +
+   scale_color_palettehex_d(popular)
+
+ggplot(mtcars, aes(mpg, disp, colour = factor(cyl))) +
+   geom_point() +
+   scale_color_palettehex_d(popular, 1872)
+```
+
+```{r warning=FALSE}
+x <- get_color("#008080")
+
+ggplot(mtcars, aes(mpg)) +
+   geom_density(aes(fill = disp, group = disp)) +
+   scale_fill_colorhex_c(x)
+
+ggplot(mtcars, aes(mpg)) +
+  geom_density(aes(fill = disp, group = disp)) +
+  scale_fill_colorhex_c(x, "tints")
+
+ggplot(mtcars, aes(mpg)) +
+  geom_density(aes(fill = disp, group = disp)) +
+  scale_fill_colorhex_c(x, "shades")
+
+ggplot(mtcars, aes(mpg, disp, colour = factor(cyl))) +
+   geom_point() +
+   scale_color_colorhex_d(x, "triadic")
+
+ggplot(mtcars, aes(mpg, disp, colour = factor(cyl))) +
+   geom_point() +
+   scale_color_colorhex_d(x, "shades")
+```
+
+
 
 

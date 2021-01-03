@@ -32,6 +32,9 @@ id or numeric index.}
 
 \item{...}{arguments to be passed to \code{\link[ggplot2]{discrete_scale}}}
 }
+\value{
+ggplot2-proto
+}
 \description{
 Colour and fill scales for ggplot2
 plots, using object of class \code{palettehex}.

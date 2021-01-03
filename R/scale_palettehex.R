@@ -15,7 +15,6 @@
 #' @param ... arguments to be passed to \code{\link[ggplot2]{discrete_scale}}
 #'
 #' @name scale-palettehex
-#' @export
 #' @return ggplot2-proto
 #' @examples
 #' library(ggplot2)

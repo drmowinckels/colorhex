@@ -65,45 +65,31 @@ get_color <- function(hex){
   row.names(prim) <- NULL
   prim <- prim[-1,]
 
-  ret <- list(
-    hex = hex,
-    space = prim,
-    base = rvest::html_table(tables[2], fill = TRUE)[[1]]
-  )
-
-  if(length(tables) > 2){
-    ret <- c(
-      ret,
-      list(
-        triadic = fix_hex(chartable(tables[3])),
-        analogous = fix_hex(chartable(tables[4])),
-        complementary = fix_hex(chartable(tables[5]))
-      )
-    )
-  }else{
-    ret <- c(
-      ret,
-      list(
-        triadic = NA_character_,
-        analogous = NA_character_,
-        complementary = NA_character_
-      )
-    )
-  }
-
   rows <- rvest::html_nodes(resp,
                             xpath = '//*[@class="colordvconline"]')
   rows <- rvest::html_text(rows)
   rows <- gsub(" \n", "", rows)
   rows <- fix_hex(rows)
 
-  ret <- c(
-    ret,
-    list(
-      shades = rows[1:11],
-      tints = rows[12:22]
-    )
+
+  ret <- list(
+    hex = hex,
+    space = prim,
+    base = rvest::html_table(tables[2], fill = TRUE)[[1]],
+    triadic = NA_character_,
+    analogous = NA_character_,
+    complementary = NA_character_,
+    shades = rows[1:11],
+    tints = rows[12:22],
+    related = rows[22:length(rows)],
+    palettes = get_pals(resp, "palettecontainerlist narrow")
   )
+
+  if(length(tables) > 2){
+    ret$triadic = fix_hex(chartable(tables[3]))
+    ret$analogous = fix_hex(chartable(tables[4]))
+    ret$complementary = fix_hex(chartable(tables[5]))
+  }
 
   colorhex(ret)
 }
@@ -112,7 +98,8 @@ colorhex <- function(x){
   stopifnot(names(x) %in% c("hex",
                             "space", "base",
                             "complementary", "analogous",
-                            "triadic", "shades", "tints"))
+                            "triadic", "shades", "tints",
+                            "related", "palettes"))
 
   structure(
     x,
@@ -128,7 +115,8 @@ format.colorhex <- function(x, ...){
     sprintf("HSL: %s", paste0(x$space[, "HSL"], collapse=", ")),
     sprintf("CMYK: %s", paste0(x$space[, "CMYK"], collapse=", ")),
     sprintf("triadic: %s", paste0(x$triadic, collapse = ", ")),
-    sprintf("complementary: %s", x$complementary)
+    sprintf("complementary: %s", x$complementary),
+    sprintf("used in %s palettes", nrow(x$palettes))
   )
 }
 
@@ -141,12 +129,13 @@ print.colorhex <- function(x, ...){
 #' @export
 plot.colorhex <- function(x,
                           type = c("complementary", "triadic",
-                                   "analogous", "shades", "tints"),
+                                   "analogous", "shades", "tints",
+                                   "related"),
                           labels = TRUE, ...){
 
   type <- match.arg(type,
                     c("complementary", "triadic",
-                      "analogous", "shades", "tints"),
+                      "analogous", "shades", "tints", "related"),
                     several.ok = TRUE)
 
   x <- lapply(type, function(y) if(y != "hex") c(x$hex, x[[y]]) else x[[y]])
@@ -158,15 +147,15 @@ plot.colorhex <- function(x,
   graphics::par(mar = c(0, 0, 0, 0))
   graphics::plot.new()
   graphics::plot(c(-.1, nrows+.3), c(.5, ncols+.5),
-       type = "n", xlab = "", ylab = "",
-       axes = FALSE
+                 type = "n", xlab = "", ylab = "",
+                 axes = FALSE
   )
 
   for(i in 1:length(type)){
     tmp <- x[[type[i]]]
     graphics::text(1, i, type[i], cex = 1, pos = 2)
     for(j in 1:length(tmp)){
-      graphics::rect(j, i-.5, j+1, i+.5, col=tmp[j], border = NA)
+      graphics::rect(j, i-.4, j+1, i+.4, col=tmp[j], border = NA)
       if(labels){
         graphics::rect(j+.2, i-.1, j+.8, i+.1, col="white", border = NA)
         graphics::text(j+.5, i, tmp[j], cex = .7)

@@ -10,7 +10,7 @@ get_popular_palettes()
 data.frame with name, id and colours
 }
 \description{
-Retrieve the palettes most users have favorited
+Retrieve the palettes most users have favourited
 from www.color-hex.com
 }
 \examples{

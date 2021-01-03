@@ -16,7 +16,7 @@ get_latest_palettes <- function(){
 
 #' Get most popular palettes
 #'
-#' Retrieve the palettes most users have favorited
+#' Retrieve the palettes most users have favourited
 #' from www.color-hex.com
 #'
 #' @return data.frame with name, id and colours
@@ -76,24 +76,25 @@ plot.palettehex <- function(x, ...){
 
   graphics::par(mar = c(0, 0, 0, 0))
   graphics::plot.new()
-  graphics::plot(c(-2, nrows), c(0, ncols),
+  graphics::plot(c(-2, nrows-.2), c(.6, ncols+.3),
        type = "n", xlab = "", ylab = "",
        axes = FALSE
   )
   for(i in 1:length(colr)){
     tmp <- colr[[i]]
-    graphics::text(1, i, tolower(tmp$name[[1]]), cex = .7, pos = 2)
+    graphics::text(1, i+.1, tolower(tmp$name[[1]]), cex = .7, pos = 2)
+    graphics::text(1, i-.1, tmp$id[[1]], cex = .7, pos = 2)
     for(j in 1:nrow(tmp)){
-      graphics::rect(j, i-.5, j+1, i+.5, col=tmp$hex[[j]], border = NA)
+      graphics::rect(j, i-.3, j+1, i+.3, col=tmp$hex[[j]], border = NA)
     }
   }
 
 }
 
 # helpers ----
-get_pals <- function(resp){
-  pal <- rvest::html_nodes(resp,
-                           xpath = '//*[@class="palettecontainerlist"]')
+get_pals <- function(resp, class = "palettecontainerlist"){
+  path <- paste0('//*[@class="',class, '"]')
+  pal <- rvest::html_nodes(resp, xpath = path)
   pal2 <- as.character(pal)
   pal2 <- strsplit(pal2, "\n")
 

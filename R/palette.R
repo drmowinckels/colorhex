@@ -82,8 +82,9 @@ plot.palettehex <- function(x, ...){
   )
   for(i in 1:length(colr)){
     tmp <- colr[[i]]
-    graphics::text(1, i+.1, tolower(tmp$name[[1]]), cex = .7, pos = 2)
-    graphics::text(1, i-.1, tmp$id[[1]], cex = .7, pos = 2)
+    graphics::text(1, i+.1,
+                   paste0(tolower(tmp$name[[1]]), " (", tmp$id[[1]], ")"),
+                   cex = .7, pos = 2)
     for(j in 1:nrow(tmp)){
       graphics::rect(j, i-.3, j+1, i+.3, col=tmp$hex[[j]], border = NA)
     }

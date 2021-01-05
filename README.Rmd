@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 [![CRAN status](https://www.r-pkg.org/badges/version/colorhex)](https://CRAN.R-project.org/package=colorhex)
 <!-- badges: end -->
 
-The goal of colorhex is to create an interface to [www.color-hex.com](www.color-hex.com), a website with hexidecimal colors and information about them. 
+The goal of colorhex is to create an interface to [www.color-hex.com](https://www.color-hex.com), a website with hexidecimal colors and information about them. 
 It also has lots of user-made palettes that can be used and browsed.
 
 ## Installation
@@ -36,7 +36,7 @@ You can install the development version from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("Athanasiamo/colorhex")
+devtools::install_github("Athanasiamo/colorhex", ref = "main")
 ```
 ## Example
 

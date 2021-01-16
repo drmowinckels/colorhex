@@ -131,88 +131,47 @@ from www.color-hex.com</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>get_latest_palettes</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;                               name     id
-#&gt; 1     Dusty Pink Nude Color Scheme 103222
-#&gt; 2                     Grunge Cream 103221
-#&gt; 3               Sophisticated Navy 103220
-#&gt; 4                     Sea Minerals 103219
-#&gt; 5                     Summer Fruit 103218
-#&gt; 6                 Watermelon Rinds 103217
-#&gt; 7                  Mindmeld-Violet 103215
-#&gt; 8                  Mindmeld-Indigo 103214
-#&gt; 9                    Mindmeld-Blue 103213
-#&gt; 10              Mindmeld-DarkGreen 103212
-#&gt; 11             Mindmeld-LightGreen 103211
-#&gt; 12                 Mindmeld-yellow 103210
-#&gt; 13                 Mindmeld-Orange 103209
-#&gt; 14                    Mindmeld-Red 103208
-#&gt; 15                           LWLSC 103207
-#&gt; 16                           LR RP 103206
-#&gt; 17                   Aegean Blue 1 103204
-#&gt; 18               Earthy Elementals 103203
-#&gt; 19                      dragon kid 103201
-#&gt; 20                      Harvest II 103198
-#&gt; 21              Brown and blue hat 103197
-#&gt; 22                         Red Hat 103196
-#&gt; 23                   Cool Blue Hat 103195
-#&gt; 24                Garden Afternoon 103194
-#&gt; 25                 Garden and Wine 103193
-#&gt; 26               Sweet and Festive 103192
-#&gt; 27 Vermillion with Green in Yellow 103190
-#&gt; 28                  tonos amarillo 103189
-#&gt; 29                 new Hakon color 103188
-#&gt; 30                           Whale 103186
-#&gt; 31                  WORMHOLE CHASE 103162
-#&gt; 32                  Garden Follies 103161
-#&gt; 33                Helga and Arnold 103160
-#&gt; 34               Follies Fantasies 103159
-#&gt; 35                FOREST FUNK FEST 103158
-#&gt; 36                  SHINING PRINCE 103155
-#&gt; 37              Sheiramoth Meadows 103153
-#&gt; 38                      Five Discs 103152
-#&gt; 39        trench twenty one pilots 103149
-#&gt; 40            Phosphorescent Peach 103148
-#&gt;                                        palette
-#&gt; 1  #eeeeee, #e2cebb, #deaa9b, #bf9290, #b9877b
-#&gt; 2  #a5837e, #b58d87, #c9a29c, #dab4af, #e9c8c3
-#&gt; 3  #ebefee, #cfcb99, #0c0434, #616166, #e0cdc8
-#&gt; 4  #e2d4b7, #b38f74, #c5eef1, #43506e, #e38b31
-#&gt; 5  #f5ffa5, #e8ffa5, #ffbebe, #ffb7ab, #ffac91
-#&gt; 6  #bffff7, #b0ffc9, #000000, #a3fdc9, #ffbecb
-#&gt; 7  #f8baff, #a54fb0, #6f2665, #bbbbbb, #aaaaaa
-#&gt; 8  #dcfdcf, #9770d4, #41157a, #bbbbbb, #aaaaaa
-#&gt; 9  #9fd6f6, #62a8dd, #0d5698, #bbbbbb, #aaaaaa
-#&gt; 10 #a1d0b2, #2f9c66, #124929, #bbbbbb, #aaaaaa
-#&gt; 11 #ceec9a, #a8ce54, #7a9a00, #e5e5e5, #aaaaaa
-#&gt; 12 #fff2be, #ffe264, #ffcf05, #bbbbbb, #aaaaaa
-#&gt; 13 #ffb77c, #df7d2e, #8d4000, #bbbbbb, #aaaaaa
-#&gt; 14 #c97e75, #c44536, #772e25, #bbbbbb, #aaaaaa
-#&gt; 15 #144a8e, #5a3d20, #64c2ed, #8e144a, #4a8e14
-#&gt; 16 #556681, #ba1206, #419474, #949eae, #bdbdbd
-#&gt; 17 #0291c3, #0274a9, #002e53, #060606, #bf1007
-#&gt; 18 #2d383a, #900900, #42994b, #065e0c, #120a8f
-#&gt; 19 #171c1d, #6e0705, #302016, #6a0705, #1a2021
-#&gt; 20 #d8dad3, #7a341b, #a4c2a5, #244431, #05281c
-#&gt; 21 #fffdfd, #f4f4f4, #947d73, #baa69f, #004976
-#&gt; 22 #ffffff, #f9eeee, #f64a53, #e5141f, #4b4b4b
-#&gt; 23 #ffffff, #f0f4fb, #31366f, #dbd6d1, #99accc
-#&gt; 24 #9dc183, #ffd8da, #0ec6c1, #c10132, #c1a178
-#&gt; 25 #9dc183, #ffd8da, #77f4f5, #c10132, #c1a178
-#&gt; 26 #8dfc79, #ed1e39, #77f4f5, #ffc8dd, #deab7b
-#&gt; 27 #7f0048, #b02824, #c43416, #e7ca0b, #215622
-#&gt; 28 #fdf88c, #fff062, #ffea6e, #f9f09d, #fff969
-#&gt; 29 #1f1f1f, #9f3a48, #0b4759, #ffffff, #3e4d57
-#&gt; 30 #e7f4fd, #96c0e6, #6693dd, #386abe, #193a07
-#&gt; 31 #0a1585, #e3e129, #e0eeee, #35355b, #03020b
-#&gt; 32 #7d0101, #64530f, #f8f8f8, #4372b0, #d0ad13
-#&gt; 33 #f25cac, #18d5b9, #ff523d, #ffc840, #e82c08
-#&gt; 34 #c0a122, #88a06d, #335018, #637035, #a5e0e4
-#&gt; 35 #ffcffc, #edd620, #ff8ea2, #6d3b00, #010906
-#&gt; 36 #470f0f, #c40903, #990028, #99338d, #4d0b50
-#&gt; 37 #ff9945, #d5640a, #973100, #781600, #fceeb5
-#&gt; 38 #245023, #342447, #ff721e, #cc2517, #8a3221
-#&gt; 39 #b9ac28, #957c0e, #6f6b33, #4b543a, #131311
-#&gt; 40 #ff5f37, #ff7d5d, #ff9d85, #ffb3a0, #ffd9d0</div></pre>
+</div><div class='output co'>#&gt;                         name     id                                     palette
+#&gt; 1                    mc grey 103734 #d9d0d2, #baacb0, #c5b9bc, #cec2c5, #aaaaaa
+#&gt; 2                  mc blonde 103733 #f8e4d3, #f7dfca, #f4d7be, #f0d2b7, #aaaaaa
+#&gt; 3               Matrimonio 1 103732 #f2e6e6, #f3e5ab, #5d0000, #93c1ba, #8d99ba
+#&gt; 4            spotify palette 103731 #232723, #62d089, #e1ece3, #457e59, #a8b2a8
+#&gt; 5        Luna Lovegood-Kiyun 103730 #0f52ba, #fada5e, #ff69b4, #e30b5c, #ceeee0
+#&gt; 6                  Wipe Away 103729 #cca4c5, #807fbb, #524595, #3e2377, #28085f
+#&gt; 7                     Plunge 103728 #5ab3bd, #4a6eb3, #251052, #721c3c, #974956
+#&gt; 8          Through The Swamp 103727 #0a2145, #144840, #346e57, #5d8461, #9eb77d
+#&gt; 9                    Sucrose 103726 #fc9bd8, #7dd3a8, #49ac99, #317390, #5d0c2a
+#&gt; 10                  Cabernet 103725 #500e31, #c04460, #e8745b, #ea9a71, #efbb8b
+#&gt; 11                    sharky 103724 #22213d, #7c80ef, #5ecdff, #f1ffcf, #fefff1
+#&gt; 12        Peeled Blueberries 103723 #29166c, #844dc2, #be88e0, #31c6a1, #c6ffe8
+#&gt; 13          Autopsy Lipstain 103722 #b9ffdc, #cfffaf, #ffea80, #ffa652, #ed6753
+#&gt; 14                   Seabass 103721 #7bc8fe, #22957e, #066146, #ffbca8, #ff908c
+#&gt; 15                  YUNGBLUD 103720 #020101, #e37aca, #000000, #f05795, #000000
+#&gt; 16                  lily pad 103719 #cce5b9, #d2eebc, #d8baba, #d0a9a9, #c99f9f
+#&gt; 17               Galway girl 103718 #92f900, #79f900, #60f900, #3bf900, #00f911
+#&gt; 18          Valentines dance 103717 #e933ff, #f333ff, #ff33e2, #ff33b9, #ff3390
+#&gt; 19             Peacock pride 103716 #66c1bf, #66b6c1, #66a3c1, #6691c1, #667ec1
+#&gt; 20                  Plum sky 103715 #5a2cee, #6d2cee, #7c31f2, #9931f2, #af31e7
+#&gt; 21       BuJo Blue Lime Gray 103714 #b7dadf, #ced698, #bfc4c5, #a5ab7c, #95abae
+#&gt; 22                        VF 103713 #ffe6eb, #efc2ce, #d9bdc6, #f7e4f0, #c9fc9f
+#&gt; 23            twitter edited 103712 #eff0f4, #bdd6e3, #67c9e7, #26a9db, #397890
+#&gt; 24       Oranges and Peaches 103711 #ffaf6d, #721f3c, #ea7777, #ffefbd, #abb062
+#&gt; 25            Red and Greens 103710 #632929, #f4a591, #0f272b, #98a575, #224039
+#&gt; 26   Pretty in pink and gray 103709 #cb1f42, #e04260, #b7b3af, #9a9799, #1f2225
+#&gt; 27                 JATP favs 103708 #faf792, #8ff8b7, #9cbac9, #ffb2b2, #d196f8
+#&gt; 28                 Wild Rose 103706 #f3f1ea, #e6e6e6, #fbcac6, #bbcebd, #060606
+#&gt; 29       Abundant Excursions 103704 #093596, #ffffff, #e4cc6c, #bc9132, #606060
+#&gt; 30            Under the pink 103698 #d6afc5, #b58baa, #79827c, #675f42, #282b17
+#&gt; 31                   topping 103691 #d75098, #e083b6, #daa7c5, #b22c7d, #aaaaaa
+#&gt; 32                      masa 103690 #af935d, #cbbca2, #8f6a4c, #bbbbbb, #aaaaaa
+#&gt; 33             2021 Momentum 103689 #71cc98, #425563, #00b5e2, #d9d9d6, #ff5c39
+#&gt; 34                 All pinks 103688 #212121, #c01032, #cb609e, #c970a7, #eaacd5
+#&gt; 35                      Lyra 103687 #15451d, #112b11, #000000, #8d8d8d, #ffffff
+#&gt; 36         Luna Organization 103686 #4602b2, #dfb533, #331176, #d69532, #684a76
+#&gt; 37 WNY PW 2021 Color Palette 103685 #0e1236, #21538e, #92bdd8, #d8dad9, #93c244
+#&gt; 38             Psychedelic 1 103684 #ffb400, #ff9500, #5fbeff, #ff1daa, #6bd13e
+#&gt; 39           Grey navy ivory 103683 #bbbbbb, #141437, #fefcf7, #bbbbbb, #aaaaaa
+#&gt; 40            sakusa kiyoomi 103682 #8790b3, #9799a9, #e5dbd7, #889379, #5b6151</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

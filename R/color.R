@@ -61,7 +61,7 @@ get_color <- function(hex){
 
   prim <- rvest::html_table(tables[1], fill = TRUE)[[1]]
   prim <- as.data.frame(t(prim))
-  names(prim) <- prim[1,]
+  names(prim) <- as.character(unlist(prim[1,]))
   row.names(prim) <- NULL
   prim <- prim[-1,]
 

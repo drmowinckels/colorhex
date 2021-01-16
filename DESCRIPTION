@@ -6,7 +6,11 @@ Authors@R: c(
             person("Athanasia Mo", "Mowinckel", 
                     email = "a.m.mowinckel@psykologi.uio.no", 
                     role = c("aut", "cre"),
-                    comment = c(ORCID = "0000-0002-5756-0223"))
+                    comment = c(ORCID = "0000-0002-5756-0223")),
+            person("Julia", "Romanowska",
+                   email = "Julia.Romanowska@uib.no",
+                   role = "ctb",
+                   comment = c(ORCID = "0000-0001-6733-1953"))
             )
 Description: www.color-hex.com is a great resource of hex colour
   codes and palettes. This package allows you to retrieve palettes

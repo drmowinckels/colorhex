@@ -1,3 +1,6 @@
+# colorhex 0.1.1
+- cran submission
+
 # colorhex 0.1.01
 
 * With ggplot2 scales.

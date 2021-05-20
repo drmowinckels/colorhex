@@ -13,8 +13,9 @@ status](https://www.r-pkg.org/badges/version/colorhex)](https://CRAN.R-project.o
 
 The goal of colorhex is to create an interface to
 [color-hex.com](https://www.color-hex.com/), a website with hexidecimal
-colors and information about them. It also has lots of user-made
-palettes that can be used and browsed.
+colors and information about them.
+
+It also has lots of user-made palettes that can be used and browsed.
 
 ## Installation
 
@@ -28,7 +29,7 @@ You can install the development version from
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("Athanasiamo/colorhex")
+devtools::install_github("Athanasiamo/colorhex", ref = "main")
 ```
 
 ## Example

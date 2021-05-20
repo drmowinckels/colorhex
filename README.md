@@ -5,10 +5,9 @@
 
 <!-- badges: start -->
 
-[![R build
-status](https://github.com/Athanasiamo/colorhex/workflows/R-CMD-check/badge.svg)](https://github.com/Athanasiamo/colorhex/actions)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/colorhex)](https://CRAN.R-project.org/package=colorhex)
+[![R-CMD-check](https://github.com/Athanasiamo/colorhex/workflows/R-CMD-check/badge.svg)](https://github.com/Athanasiamo/colorhex/actions)
 <!-- badges: end -->
 
 The goal of colorhex is to create an interface to

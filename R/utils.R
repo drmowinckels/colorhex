@@ -5,7 +5,7 @@
 #' color code
 #'
 #' @param x hexidecimal character
-#' @return logical
+#' @return logical. TRUE if object is a hexidecimal code
 #'
 #' @export
 is_hex <- function(x){

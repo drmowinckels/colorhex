@@ -42,7 +42,7 @@ randcol <- function(){
 #' Get color information from www.color-hex.com
 #' of a hex-color.
 #'
-#' @param hex character string that is a hexdecimal color
+#' @param hex character string that is a hexidecimal color
 #'
 #' @return list of class 'colorhex'
 #' @export
@@ -70,7 +70,6 @@ get_color <- function(hex){
   rows <- rvest::html_text(rows)
   rows <- gsub(" \n", "", rows)
   rows <- fix_hex(rows)
-
 
   ret <- list(
     hex = hex,

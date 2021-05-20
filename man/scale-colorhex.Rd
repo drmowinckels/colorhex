@@ -32,6 +32,9 @@ One of c("complementary", "triadic" (default), "shades", "tints", "related")}
 
 \item{...}{arguments to be passed to \code{\link[ggplot2]{discrete_scale}}}
 }
+\value{
+a ggplot2-proto
+}
 \description{
 Colour and fill scales for ggplot2
 plots, using object of class \code{colorhex}

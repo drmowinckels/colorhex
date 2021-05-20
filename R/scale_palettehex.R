@@ -108,7 +108,6 @@ palettehex_pal <- function(x,
   function(n) {
     if (n > length(cols))
       warning(sprintf("palettehex only has %s colors.", length(cols)))
-    # browser()
 
     cols <- cols[1:n]
     cols <- cols[!is.na(cols)]

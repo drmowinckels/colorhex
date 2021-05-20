@@ -10,7 +10,7 @@ is_hex(x)
 \item{x}{hexidecimal character}
 }
 \value{
-logical
+logical. TRUE if object is a hexidecimal code
 }
 \description{
 validate if string is hexidecimal

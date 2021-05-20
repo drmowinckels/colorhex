@@ -1,19 +1,19 @@
 Package: colorhex
 Type: Package
-Title: WGet color and palettes from www.color-hex.com
-Version: 0.1.01
+Title: Colors and Palettes from Color-Hex
+Version: 0.1.1
 Authors@R: c(
             person("Athanasia Mo", "Mowinckel", 
                     email = "a.m.mowinckel@psykologi.uio.no", 
                     role = c("aut", "cre"),
                     comment = c(ORCID = "0000-0002-5756-0223"))
             )
-Description: www.color-hex.com is a great resource of hex colour
+Description: The website <www.color-hex.com> is a great resource of hex colour
   codes and palettes. This package allows you to retrieve palettes
-  and colour information from the website directly from R.
+  and colour information from the website directly from R. There are 
+  also custom scale-functions for 'ggplot2'. 
 License: MIT + file LICENSE
 Encoding: UTF-8
-LazyData: true
 Imports: 
     rvest,
     xml2,
@@ -24,4 +24,6 @@ RoxygenNote: 7.1.1
 URL: https://github.com/Athanasiamo/colorhex
 BugReports: https://github.com/Athanasiamo/colorhex/issues
 Suggests: 
+    spelling,
     scales
+Language: en-US

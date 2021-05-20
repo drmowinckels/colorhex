@@ -7,7 +7,7 @@
 get_color(hex)
 }
 \arguments{
-\item{hex}{character string that is a hexdecimal color}
+\item{hex}{character string that is a hexidecimal color}
 }
 \value{
 list of class 'colorhex'

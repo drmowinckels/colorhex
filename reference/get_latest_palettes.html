@@ -73,7 +73,7 @@ from www.color-hex.com" />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">colorhex</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.01</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
       </span>
     </div>
 
@@ -131,47 +131,88 @@ from www.color-hex.com</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>get_latest_palettes</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;                         name     id                                     palette
-#&gt; 1                    mc grey 103734 #d9d0d2, #baacb0, #c5b9bc, #cec2c5, #aaaaaa
-#&gt; 2                  mc blonde 103733 #f8e4d3, #f7dfca, #f4d7be, #f0d2b7, #aaaaaa
-#&gt; 3               Matrimonio 1 103732 #f2e6e6, #f3e5ab, #5d0000, #93c1ba, #8d99ba
-#&gt; 4            spotify palette 103731 #232723, #62d089, #e1ece3, #457e59, #a8b2a8
-#&gt; 5        Luna Lovegood-Kiyun 103730 #0f52ba, #fada5e, #ff69b4, #e30b5c, #ceeee0
-#&gt; 6                  Wipe Away 103729 #cca4c5, #807fbb, #524595, #3e2377, #28085f
-#&gt; 7                     Plunge 103728 #5ab3bd, #4a6eb3, #251052, #721c3c, #974956
-#&gt; 8          Through The Swamp 103727 #0a2145, #144840, #346e57, #5d8461, #9eb77d
-#&gt; 9                    Sucrose 103726 #fc9bd8, #7dd3a8, #49ac99, #317390, #5d0c2a
-#&gt; 10                  Cabernet 103725 #500e31, #c04460, #e8745b, #ea9a71, #efbb8b
-#&gt; 11                    sharky 103724 #22213d, #7c80ef, #5ecdff, #f1ffcf, #fefff1
-#&gt; 12        Peeled Blueberries 103723 #29166c, #844dc2, #be88e0, #31c6a1, #c6ffe8
-#&gt; 13          Autopsy Lipstain 103722 #b9ffdc, #cfffaf, #ffea80, #ffa652, #ed6753
-#&gt; 14                   Seabass 103721 #7bc8fe, #22957e, #066146, #ffbca8, #ff908c
-#&gt; 15                  YUNGBLUD 103720 #020101, #e37aca, #000000, #f05795, #000000
-#&gt; 16                  lily pad 103719 #cce5b9, #d2eebc, #d8baba, #d0a9a9, #c99f9f
-#&gt; 17               Galway girl 103718 #92f900, #79f900, #60f900, #3bf900, #00f911
-#&gt; 18          Valentines dance 103717 #e933ff, #f333ff, #ff33e2, #ff33b9, #ff3390
-#&gt; 19             Peacock pride 103716 #66c1bf, #66b6c1, #66a3c1, #6691c1, #667ec1
-#&gt; 20                  Plum sky 103715 #5a2cee, #6d2cee, #7c31f2, #9931f2, #af31e7
-#&gt; 21       BuJo Blue Lime Gray 103714 #b7dadf, #ced698, #bfc4c5, #a5ab7c, #95abae
-#&gt; 22                        VF 103713 #ffe6eb, #efc2ce, #d9bdc6, #f7e4f0, #c9fc9f
-#&gt; 23            twitter edited 103712 #eff0f4, #bdd6e3, #67c9e7, #26a9db, #397890
-#&gt; 24       Oranges and Peaches 103711 #ffaf6d, #721f3c, #ea7777, #ffefbd, #abb062
-#&gt; 25            Red and Greens 103710 #632929, #f4a591, #0f272b, #98a575, #224039
-#&gt; 26   Pretty in pink and gray 103709 #cb1f42, #e04260, #b7b3af, #9a9799, #1f2225
-#&gt; 27                 JATP favs 103708 #faf792, #8ff8b7, #9cbac9, #ffb2b2, #d196f8
-#&gt; 28                 Wild Rose 103706 #f3f1ea, #e6e6e6, #fbcac6, #bbcebd, #060606
-#&gt; 29       Abundant Excursions 103704 #093596, #ffffff, #e4cc6c, #bc9132, #606060
-#&gt; 30            Under the pink 103698 #d6afc5, #b58baa, #79827c, #675f42, #282b17
-#&gt; 31                   topping 103691 #d75098, #e083b6, #daa7c5, #b22c7d, #aaaaaa
-#&gt; 32                      masa 103690 #af935d, #cbbca2, #8f6a4c, #bbbbbb, #aaaaaa
-#&gt; 33             2021 Momentum 103689 #71cc98, #425563, #00b5e2, #d9d9d6, #ff5c39
-#&gt; 34                 All pinks 103688 #212121, #c01032, #cb609e, #c970a7, #eaacd5
-#&gt; 35                      Lyra 103687 #15451d, #112b11, #000000, #8d8d8d, #ffffff
-#&gt; 36         Luna Organization 103686 #4602b2, #dfb533, #331176, #d69532, #684a76
-#&gt; 37 WNY PW 2021 Color Palette 103685 #0e1236, #21538e, #92bdd8, #d8dad9, #93c244
-#&gt; 38             Psychedelic 1 103684 #ffb400, #ff9500, #5fbeff, #ff1daa, #6bd13e
-#&gt; 39           Grey navy ivory 103683 #bbbbbb, #141437, #fefcf7, #bbbbbb, #aaaaaa
-#&gt; 40            sakusa kiyoomi 103682 #8790b3, #9799a9, #e5dbd7, #889379, #5b6151</div></pre>
+</div><div class='output co'>#&gt;                             name     id
+#&gt; 1                 Vintage club 2 109741
+#&gt; 2                   Vintage Club 109740
+#&gt; 3  Pink-Beige Minimalist Palette 109739
+#&gt; 4             KCPC school summer 109738
+#&gt; 5                    ModernCream 109737
+#&gt; 6                Lonely Boy Blue 109735
+#&gt; 7                     Cappuccimo 109734
+#&gt; 8     Beach Theme Bedroom Colors 109733
+#&gt; 9                     Past-Candy 109730
+#&gt; 10              sweet chocolates 109728
+#&gt; 11             very dark colours 109727
+#&gt; 12                    ocean12345 109723
+#&gt; 13       Pastel green and purple 109721
+#&gt; 14          Pastel pink and blue 109720
+#&gt; 15                 Rotten Sponge 109719
+#&gt; 16                      Strummer 109718
+#&gt; 17                       1 Blues 109715
+#&gt; 18                 KCMainPalette 109714
+#&gt; 19               Hanne Brand DNA 109713
+#&gt; 20       Lavender field of sleep 109712
+#&gt; 21                   cafe elixer 109711
+#&gt; 22                  Velvet vibes 109710
+#&gt; 23                        Stevie 109709
+#&gt; 24             Jwalker Marketing 109708
+#&gt; 25                         Adrie 109707
+#&gt; 26                Miles of Bliss 109706
+#&gt; 27              High Window Reds 109705
+#&gt; 28              vintage upcycler 109704
+#&gt; 29                     Roselious 109703
+#&gt; 30                        Sychem 109702
+#&gt; 31                 Bellow Yellow 109701
+#&gt; 32               Purples to Reds 109700
+#&gt; 33                 for adopt #14 109692
+#&gt; 34         Electric Cotton Candy 109691
+#&gt; 35           Pale Sunset Colours 109690
+#&gt; 36                  CHC Branding 109689
+#&gt; 37                 PhilzaUpdates 109688
+#&gt; 38                 Jotaro Part 6 109687
+#&gt; 39               giant sky spoon 109682
+#&gt; 40                SDS - Gluttony 109679
+#&gt;                                        palette
+#&gt; 1  #042234, #e1bb06, #957e28, #d9dbc7, #b9b79c
+#&gt; 2  #0f83ca, #042234, #e1bb06, #967e28, #d9dbc7
+#&gt; 3  #e69e8f, #f6e3ba, #df8a76, #ffefcb, #c2656d
+#&gt; 4  #fde2e0, #e0e0f4, #c2d8e5, #fdf48b, #fd6666
+#&gt; 5  #959595, #e2e0d4, #cebeb9, #e7cac2, #e8e8e8
+#&gt; 6  #4a78e6, #49de9e, #d176d6, #ea5a46, #1c39bb
+#&gt; 7  #3e210c, #6f3909, #ba6324, #ff7b00, #12d6ee
+#&gt; 8  #befbf6, #ffffff, #92c3e7, #7efff5, #67e3ae
+#&gt; 9  #ffd7d7, #fffdc6, #d4ffc6, #dadcff, #c6d8ff
+#&gt; 10 #724a21, #1e0e03, #ffe7ad, #f2a4a4, #c97128
+#&gt; 11 #240000, #02001c, #021a00, #1c1800, #1a001c
+#&gt; 12 #2b4b49, #226974, #1a888b, #1e75a9, #50c5b6
+#&gt; 13 #9be5dc, #b9def2, #c9def2, #d9def2, #e9def2
+#&gt; 14 #fea1ff, #eeb1ff, #dec1ff, #ced1ff, #bcdffd
+#&gt; 15 #c9e899, #d5d07e, #c29766, #a26140, #813d28
+#&gt; 16 #ffcc91, #ef7b61, #c64022, #afc6f3, #31738a
+#&gt; 17 #ffffff, #f0f8ff, #00f00f, #00008b, #000000
+#&gt; 18 #af99f7, #5a156b, #cefcef, #bbbbbb, #aaaaaa
+#&gt; 19 #a37a91, #4b3737, #f4e1e1, #8d9a8f, #3e5847
+#&gt; 20 #af84c4, #a178b5, #906ca2, #866597, #806290
+#&gt; 21 #d8b997, #a67b40, #53320e, #371c09, #c9a26e
+#&gt; 22 #004c31, #842f41, #2c2b2e, #2e2959, #4c1246
+#&gt; 23 #fadd53, #d10400, #003d21, #a8a8a9, #6f4825
+#&gt; 24 #000000, #ffffff, #f31919, #df0707, #d30e0e
+#&gt; 25 #eeebea, #093a0a, #0e0c50, #000000, #500e0c
+#&gt; 26 #755b3f, #eea896, #ffffff, #20c3cb, #121218
+#&gt; 27 #bd150d, #db2c1b, #e7412c, #fe571b, #e5b11c
+#&gt; 28 #2a2727, #912400, #c30c30, #c90c90, #ffffff
+#&gt; 29 #ff005a, #ec0077, #e10071, #df014f, #d20000
+#&gt; 30 #c6d32d, #0f9fd6, #cccccc, #bbbbbb, #aaaaaa
+#&gt; 31 #d9e1c1, #c6d6a2, #bccc8e, #a4b877, #94a165
+#&gt; 32 #381e7a, #603e78, #a74e7b, #dd5c76, #f66868
+#&gt; 33 #fef9bc, #fff2b5, #fbdb9e, #f9cc89, #2d2d2c
+#&gt; 34 #ff54e7, #ff76eb, #ff98f0, #ffbaf5, #ffdcfa
+#&gt; 35 #d776e4, #ea8cbc, #ffa79b, #ffb071, #ffb860
+#&gt; 36 #000fb3, #f30b36, #8a2be2, #dafa28, #0ff1ce
+#&gt; 37 #4b5a3b, #ea0c07, #ec4332, #a1d485, #000000
+#&gt; 38 #ecc88c, #50bd47, #dfc356, #d1a045, #373740
+#&gt; 39 #0a0918, #2c3f85, #edf0d7, #53afdd, #2785bf
+#&gt; 40 #ea40bb, #f96bd1, #f99bdf, #f7c3e9, #fde0f5</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

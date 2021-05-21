@@ -74,6 +74,8 @@ plot.palettehex <- function(x, ...){
   nrows <- max(sapply(colr, nrow))+1
   ncols <- length(colr)
 
+  oldpar <- graphics::par(no.readonly = TRUE)
+  on.exit(graphics::par(oldpar))
   graphics::par(mar = c(0, 0, 0, 0))
   graphics::plot.new()
   graphics::plot(c(-2, nrows-.2), c(.6, ncols+.3),

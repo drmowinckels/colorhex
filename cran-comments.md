@@ -14,3 +14,5 @@
 0 errors | 0 warnings | 1 note
 
 * This is a new release.
+* added `on.exit()` before changing `par()`
+* added 'https:' to url in DESCRIPTION

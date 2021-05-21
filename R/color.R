@@ -143,6 +143,8 @@ plot.colorhex <- function(x,
   ncols <- length(type)
   nrows <- max(sapply(x, length))+.5
 
+  oldpar <- graphics::par(no.readonly = TRUE)
+  on.exit(graphics::par(oldpar))
   graphics::par(mar = c(0, 0, 0, 0))
   graphics::plot.new()
   graphics::plot(c(-.1, nrows+.3), c(.5, ncols+.5),

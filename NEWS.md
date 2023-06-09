@@ -1,3 +1,8 @@
+# colorhex 0.1.2
+- fix links in DESCRIPTION to new standard
+- update github actions to newer versions
+- fixed urls to new github username
+
 # colorhex 0.1.1
 - cran submission
 

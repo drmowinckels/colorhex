@@ -7,8 +7,8 @@
 
 [![CRAN
 status](https://www.r-pkg.org/badges/version/colorhex)](https://CRAN.R-project.org/package=colorhex)
-[![R-CMD-check](https://github.com/Athanasiamo/colorhex/workflows/R-CMD-check/badge.svg)](https://github.com/Athanasiamo/colorhex/actions)
-[![R-CMD-check](https://github.com/Athanasiamo/colorhex/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Athanasiamo/colorhex/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/drmowinckels/colorhex/workflows/R-CMD-check/badge.svg)](https://github.com/drmowinckels/colorhex/actions)
+[![R-CMD-check](https://github.com/drmowinckels/colorhex/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/drmowinckels/colorhex/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The goal of colorhex is to create an interface to
@@ -29,7 +29,7 @@ You can install the development version from
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("Athanasiamo/colorhex", ref = "main")
+devtools::install_github("drmowinckels/colorhex", ref = "main")
 ```
 
 ## Example
@@ -64,7 +64,7 @@ x
 #> [36] "#fff68f" "#f08080" "#20b2aa" "#ffc3a0" "#333333" "#66cdaa" "#c0d6e4"
 #> [43] "#ff6666" "#ff00ff" "#cbbeb5" "#ffdab9" "#ff7f50" "#468499" "#afeeee"
 #> [50] "#008000" "#b4eeb4" "#00ced1" "#f6546a" "#660066" "#0e2f44" "#b6fcd5"
-#> [57] "#696969" "#daa520" "#f5f5f5" "#990000" "#6897bb" "#000080" "#808080"
+#> [57] "#daa520" "#696969" "#f5f5f5" "#990000" "#6897bb" "#000080" "#808080"
 #> [64] "#088da5" "#f5f5dc" "#8b0000" "#8a2be2" "#dddddd" "#ccff00" "#ffff66"
 #> [71] "#2acaea" "#101010" "#81d8d0" "#0a75ad" "#ff4040" "#66cccc" "#420420"
 #> [78] "#a0db8e" "#ff1493" "#cc0000" "#3399ff" "#999999" "#00ff7f" "#794044"

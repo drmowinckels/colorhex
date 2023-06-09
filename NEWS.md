@@ -1,3 +1,5 @@
+# colorhex (development version)
+
 # colorhex 0.1.2
 - fix links in DESCRIPTION to new standard
 - update github actions to newer versions

@@ -111,7 +111,6 @@ get_pals <- function(resp, class = "palettecontainerlist"){
   )
 }
 
-
 palettehex <- function(name, id, palette){
   ret <- data.frame(
     name = name,

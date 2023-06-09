@@ -1,7 +1,7 @@
 Package: colorhex
 Type: Package
 Title: Colors and Palettes from Color-Hex
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: c(
             person("Athanasia Mo", "Mowinckel", 
                     email = "a.m.mowinckel@psykologi.uio.no", 
@@ -12,7 +12,7 @@ Authors@R: c(
                    role = "ctb",
                    comment = c(ORCID = "0000-0001-6733-1953"))
             )
-Description: The website <https:www.color-hex.com> is a great resource of hex colour
+Description: The website <https://www.color-hex.com> is a great resource of hex colour
   codes and palettes. This package allows you to retrieve palettes
   and colour information from the website directly from R. There are 
   also custom scale-functions for 'ggplot2'. 

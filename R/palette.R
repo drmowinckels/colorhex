@@ -16,8 +16,8 @@ get_latest_palettes <- function(){
 
 #' Get most popular palettes
 #'
-#' Retrieve the palettes most users have favourited
-#' from www.color-hex.com
+#' Retrieve the palettes most users have
+#' checked as favourites from www.color-hex.com
 #'
 #' @return data.frame with name, id and colours
 #' @export
@@ -124,8 +124,6 @@ palettehex <- function(name, id, palette){
     ret,
     class = c("palettehex", "data.frame"))
 }
-
-
 
 unnest_pal <- function(x){
   k <- cbind(x[1], x[2], unname(unlist(x[3])))

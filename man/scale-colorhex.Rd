@@ -48,20 +48,21 @@ to create colour scales to be used in ggplot2.
 }
 \section{Functions}{
 \itemize{
-\item \code{scale_colour_colorhex_d}: Discrete colour scale
+\item \code{scale_colour_colorhex_d()}: Discrete colour scale
 
-\item \code{scale_color_colorhex_d}: Discrete colour scale
+\item \code{scale_color_colorhex_d()}: Discrete colour scale
 
-\item \code{scale_fill_colorhex_d}: Discrete fill scale
+\item \code{scale_fill_colorhex_d()}: Discrete fill scale
 
-\item \code{scale_colour_colorhex_c}: Continuous colour scale
+\item \code{scale_colour_colorhex_c()}: Continuous colour scale
 
-\item \code{scale_color_colorhex_c}: Continuous colour scale
+\item \code{scale_color_colorhex_c()}: Continuous colour scale
 
-\item \code{scale_fill_colorhex_c}: Continuous fill scale
+\item \code{scale_fill_colorhex_c()}: Continuous fill scale
+
 }}
-
 \examples{
+if(colorhex_access()){
 library(ggplot2)
 
 x <- get_color("#008080")
@@ -85,4 +86,5 @@ ggplot(mtcars, aes(mpg, disp, colour = factor(cyl))) +
 ggplot(mtcars, aes(mpg, disp, colour = factor(cyl))) +
    geom_point() +
    scale_color_colorhex_d(x, "shades")
+ }
 }

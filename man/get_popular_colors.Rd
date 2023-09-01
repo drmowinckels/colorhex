@@ -15,5 +15,7 @@ that have been liked by the most users.
 This function will retrieve all of these.
 }
 \examples{
+if(colorhex_access()){
 get_popular_colors()
+}
 }

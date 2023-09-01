@@ -12,7 +12,7 @@
 #' }
 get_latest_palettes <- function(){
   url <- paste0(colour_url(), "color-palettes/")
-  resp <- xml2::read_html(url)
+  resp <- rvest::read_html(url)
   get_pals(resp)
 }
 
@@ -30,13 +30,13 @@ get_latest_palettes <- function(){
 #' }
 get_popular_palettes <- function(){
   url <- paste0(colour_url(), "color-palettes/popular.php")
-  resp <- xml2::read_html(url)
+  resp <- rvest::read_html(url)
   get_pals(resp)
 }
 
 get_pal <- function(id){
   url <- paste0(colour_url(), "color-palette/", id)
-  resp <- xml2::read_html(url)
+  resp <- rvest::read_html(url)
 
   tables <- rvest::html_nodes(resp, "table")
   tables <- rvest::html_table(tables[1], fill = TRUE)[[1]]

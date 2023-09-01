@@ -12,13 +12,24 @@ is_hex <- function(x){
   grepl("^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$", x)
 }
 
+#' Check access to color-hex.com
+#'
+#' Servers go down from time to time.
+#' This function checks if the colorhex server
+#' is running and retuning ok.
+#'
+#' @return logical if the server is accessible
+#' @export
+#'
+#' @examples
+#' colorhex_access()
 colorhex_access <- function(){
   any(!is.na(pingr::ping(colour_url(FALSE))))
 }
 
-colour_url <- function(safe = TRUE){
+colour_url <- function(full = TRUE){
   url <- "www.color-hex.com"
-  if(!safe)
+  if(!full)
     return(url)
   paste0("https://", url, "/")
 }
@@ -31,7 +42,7 @@ chartable <- function(table){
 
 strip_html <- function(x){
     rvest::html_text(
-      xml2::read_html(x)
+      rvest::read_html(x)
     )
 }
 

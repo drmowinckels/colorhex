@@ -47,20 +47,21 @@ can be made for the scale.
 }
 \section{Functions}{
 \itemize{
-\item \code{scale_colour_palettehex_d}: Discrete colour scale
+\item \code{scale_colour_palettehex_d()}: Discrete colour scale
 
-\item \code{scale_color_palettehex_d}: Discrete colour scale
+\item \code{scale_color_palettehex_d()}: Discrete colour scale
 
-\item \code{scale_fill_palettehex_d}: Discrete fill scale
+\item \code{scale_fill_palettehex_d()}: Discrete fill scale
 
-\item \code{scale_colour_palettehex_c}: Continuous colour scale
+\item \code{scale_colour_palettehex_c()}: Continuous colour scale
 
-\item \code{scale_color_palettehex_c}: Continuous colour scale
+\item \code{scale_color_palettehex_c()}: Continuous colour scale
 
-\item \code{scale_fill_palettehex_c}: Continuous fill scale
+\item \code{scale_fill_palettehex_c()}: Continuous fill scale
+
 }}
-
 \examples{
+if(colorhex_access()){
 library(ggplot2)
 
 x <- get_popular_palettes()
@@ -80,4 +81,5 @@ ggplot(mtcars, aes(mpg, disp, colour = factor(cyl))) +
 ggplot(mtcars, aes(mpg, disp, colour = factor(cyl))) +
    geom_point() +
    scale_color_palettehex_d(x, 1872)
+}
 }

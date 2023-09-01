@@ -13,8 +13,7 @@
 #' }
 get_popular_colors <- function(){
   url <- paste0(colour_url(), "popular-colors.php")
-  resp <- xml2::read_html(url)
-
+  resp <- rvest::read_html(url)
   cols <- rvest::html_nodes(resp,
                             xpath = '//*[@class="colordva"]')
   cols <- as.character(cols)
@@ -27,9 +26,7 @@ get_popular_colors <- function(){
 #' @export
 #'
 #' @examples
-#' if(colorhex_access()){
 #' get_random_color()
-#' }
 get_random_color <- function(){
   grDevices::rgb(randcol(),
                  randcol(),
@@ -62,7 +59,7 @@ get_color <- function(hex){
 
   url <- paste0(colour_url(), "color/", gsub("#", "", hex))
 
-  resp <- xml2::read_html(url)
+  resp <- rvest::read_html(url)
   tables <- rvest::html_nodes(resp, "table")
 
   prim <- rvest::html_table(tables[1], fill = TRUE)[[1]]

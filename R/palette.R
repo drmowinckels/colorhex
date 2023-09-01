@@ -7,7 +7,7 @@
 #' @export
 #'
 #' @examples
-#' if(colorhex_access()){
+#' \dontrun{
 #' get_latest_palettes()
 #' }
 get_latest_palettes <- function(){
@@ -19,13 +19,13 @@ get_latest_palettes <- function(){
 #' Get most popular palettes
 #'
 #' Retrieve the palettes most users have
-#' checked as favourites from www.color-hex.com
+#' checked as favorites from www.color-hex.com
 #'
 #' @return data.frame with name, id and colours
 #' @export
 #'
 #' @examples
-#' if(colorhex_access()){
+#' \dontrun{
 #' get_popular_palettes()
 #' }
 get_popular_palettes <- function(){
@@ -61,7 +61,7 @@ get_pal <- function(id){
 #' @export
 #'
 #' @examples
-#' if(colorhex_access()){
+#' \dontrun{
 #' get_palette(103107)
 #'
 #' # Lookup multiple palettes

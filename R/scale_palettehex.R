@@ -17,7 +17,7 @@
 #' @name scale-palettehex
 #' @return ggplot2-proto
 #' @examples
-#' if(colorhex_access()){
+#' \dontrun{
 #' library(ggplot2)
 #'
 #' x <- get_popular_palettes()

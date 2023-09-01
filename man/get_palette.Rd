@@ -17,7 +17,7 @@ Get palette information from www.color-hex.com
 based on the palette id (can be found in the url)
 }
 \examples{
-if(colorhex_access()){
+\dontrun{
 get_palette(103107)
 
 # Lookup multiple palettes

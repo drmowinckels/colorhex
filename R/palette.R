@@ -7,7 +7,9 @@
 #' @export
 #'
 #' @examples
+#' if(colorhex_access()){
 #' get_latest_palettes()
+#' }
 get_latest_palettes <- function(){
   url <- paste0(colour_url(), "color-palettes/")
   resp <- xml2::read_html(url)
@@ -23,7 +25,9 @@ get_latest_palettes <- function(){
 #' @export
 #'
 #' @examples
+#' if(colorhex_access()){
 #' get_popular_palettes()
+#' }
 get_popular_palettes <- function(){
   url <- paste0(colour_url(), "color-palettes/popular.php")
   resp <- xml2::read_html(url)
@@ -57,11 +61,13 @@ get_pal <- function(id){
 #' @export
 #'
 #' @examples
+#' if(colorhex_access()){
 #' get_palette(103107)
 #'
 #' # Lookup multiple palettes
 #' id <- c(103161, 103107)
 #' get_palette(id)
+#' }
 get_palette <- function(id){
   x <- lapply(id, get_pal)
   do.call(rbind, x)

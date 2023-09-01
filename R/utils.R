@@ -12,9 +12,15 @@ is_hex <- function(x){
   grepl("^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$", x)
 }
 
+colorhex_access <- function(){
+  any(!is.na(pingr::ping(colour_url(FALSE))))
+}
 
-colour_url <- function(){
-  "https://www.color-hex.com/"
+colour_url <- function(safe = TRUE){
+  url <- "www.color-hex.com"
+  if(!safe)
+    return(url)
+  paste0("https://", url, "/")
 }
 
 

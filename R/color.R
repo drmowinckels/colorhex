@@ -8,7 +8,9 @@
 #' @export
 #'
 #' @examples
+#' if(colorhex_access()){
 #' get_popular_colors()
+#' }
 get_popular_colors <- function(){
   url <- paste0(colour_url(), "popular-colors.php")
   resp <- xml2::read_html(url)
@@ -25,7 +27,9 @@ get_popular_colors <- function(){
 #' @export
 #'
 #' @examples
+#' if(colorhex_access()){
 #' get_random_color()
+#' }
 get_random_color <- function(){
   grDevices::rgb(randcol(),
                  randcol(),
@@ -48,8 +52,10 @@ randcol <- function(){
 #' @export
 #'
 #' @examples
+#' if(colorhex_access()){
 #' get_color("#470f0f")
 #' get_color("#f2f2f2")
+#' }
 get_color <- function(hex){
   hex <- fix_hex(hex)
   stopifnot(is_hex(hex))

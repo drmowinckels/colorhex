@@ -17,6 +17,7 @@
 #' @name scale-palettehex
 #' @return ggplot2-proto
 #' @examples
+#' if(colorhex_access()){
 #' library(ggplot2)
 #'
 #' x <- get_popular_palettes()
@@ -36,6 +37,7 @@
 #' ggplot(mtcars, aes(mpg, disp, colour = factor(cyl))) +
 #'    geom_point() +
 #'    scale_color_palettehex_d(x, 1872)
+#' }
 NULL
 #> NULL
 

@@ -62,7 +62,7 @@ to create colour scales to be used in ggplot2.
 
 }}
 \examples{
-\dontrun{
+if(interactive()){
 library(ggplot2)
 
 x <- get_color("#008080")

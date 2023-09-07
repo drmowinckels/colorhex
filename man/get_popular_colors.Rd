@@ -15,7 +15,7 @@ that have been liked by the most users.
 This function will retrieve all of these.
 }
 \examples{
-\dontrun{
+if(interactive()){
 get_popular_colors()
 }
 }

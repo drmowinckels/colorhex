@@ -14,7 +14,7 @@ Retrieve the palettes most users have
 checked as favorites from www.color-hex.com
 }
 \examples{
-\dontrun{
+if(interactive()){
 get_popular_palettes()
 }
 }

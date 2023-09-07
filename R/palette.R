@@ -7,7 +7,7 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' if(interactive()){
 #' get_latest_palettes()
 #' }
 get_latest_palettes <- function(){
@@ -25,7 +25,7 @@ get_latest_palettes <- function(){
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' if(interactive()){
 #' get_popular_palettes()
 #' }
 get_popular_palettes <- function(){
@@ -61,7 +61,7 @@ get_pal <- function(id){
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' if(interactive()){
 #' get_palette(103107)
 #'
 #' # Lookup multiple palettes

@@ -8,7 +8,7 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' if(interactive()){
 #' get_popular_colors()
 #' }
 get_popular_colors <- function(){
@@ -49,7 +49,7 @@ randcol <- function(){
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' if(interactive()){
 #' get_color("#470f0f")
 #' get_color("#f2f2f2")
 #' }

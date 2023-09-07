@@ -14,7 +14,7 @@ Retrieve the most recently made palettes
 from www.color-hex.com
 }
 \examples{
-\dontrun{
+if(interactive()){
 get_latest_palettes()
 }
 }

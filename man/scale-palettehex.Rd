@@ -61,7 +61,7 @@ can be made for the scale.
 
 }}
 \examples{
-\dontrun{
+if(interactive()){
 library(ggplot2)
 
 x <- get_popular_palettes()

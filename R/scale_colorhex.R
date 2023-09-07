@@ -18,7 +18,7 @@
 #' @name scale-colorhex
 #' @return a ggplot2-proto
 #' @examples
-#' \dontrun{
+#' if(interactive()){
 #' library(ggplot2)
 #'
 #' x <- get_color("#008080")

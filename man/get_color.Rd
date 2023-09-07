@@ -19,6 +19,5 @@ of a hex-color.
 \examples{
 if(interactive()){
 get_color("#470f0f")
-get_color("#f2f2f2")
 }
 }

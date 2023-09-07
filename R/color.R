@@ -51,7 +51,6 @@ randcol <- function(){
 #' @examples
 #' if(interactive()){
 #' get_color("#470f0f")
-#' get_color("#f2f2f2")
 #' }
 get_color <- function(hex){
   hex <- fix_hex(hex)

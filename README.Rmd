@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![CRAN status](https://www.r-pkg.org/badges/version/colorhex)](https://CRAN.R-project.org/package=colorhex)
-[![R-CMD-check](https://github.com/Athanasiamo/colorhex/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Athanasiamo/colorhex/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/drmowinckels/colorhex/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/drmowinckels/colorhex/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 
@@ -37,8 +37,8 @@ It also has lots of user-made palettes that can be used and browsed.
 You can install the development version from [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("drmowinckels/colorhex", ref = "main")
+# install.packages("remotes")
+remotes::install_github("drmowinckels/colorhex", ref = "main")
 ```
 ## Example
 

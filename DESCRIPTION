@@ -22,11 +22,13 @@ Imports:
     ggplot2,
     graphics,
     grDevices,
+    httr2,
     rvest
 RoxygenNote: 7.2.3
 URL: https://github.com/drmowinckels/colorhex
 BugReports: https://github.com/drmowinckels/colorhex/issues
 Suggests: 
+    curl,
     spelling,
     scales
 Language: en-US

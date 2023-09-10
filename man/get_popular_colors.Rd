@@ -15,7 +15,7 @@ that have been liked by the most users.
 This function will retrieve all of these.
 }
 \examples{
-if(interactive()){
+if(curl::has_internet()){
 get_popular_colors()
 }
 }

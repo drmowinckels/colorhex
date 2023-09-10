@@ -17,7 +17,7 @@ Get color information from www.color-hex.com
 of a hex-color.
 }
 \examples{
-if(interactive()){
+if(curl::has_internet()){
 get_color("#470f0f")
 }
 }

@@ -8,14 +8,20 @@
 #' @export
 #'
 #' @examples
-#' if(interactive()){
+#' if(curl::has_internet()){
 #' get_popular_colors()
 #' }
 get_popular_colors <- function(){
-  url <- paste0(colour_url(), "popular-colors.php")
-  resp <- rvest::read_html(url)
-  cols <- rvest::html_nodes(resp,
-                            xpath = '//*[@class="colordva"]')
+  req <- httr2::request(colour_url())
+  req <- httr2::req_url_path_append(
+    req, 
+    "popular-colors.php")
+  
+  resp <- httr2::req_perform(req)
+  resp <- httr2::resp_body_html(resp)
+  cols <- rvest::html_nodes(
+    resp,
+    xpath = '//*[@class="colordva"]')
   cols <- as.character(cols)
   get_bkg_color(cols)
 }
@@ -34,10 +40,6 @@ get_random_color <- function(){
                  maxColorValue = 255)
 }
 
-randcol <- function(){
-  sample(1:255, 1)
-}
-
 #' Get color information
 #'
 #' Get color information from www.color-hex.com
@@ -49,30 +51,34 @@ randcol <- function(){
 #' @export
 #'
 #' @examples
-#' if(interactive()){
+#' if(curl::has_internet()){
 #' get_color("#470f0f")
 #' }
 get_color <- function(hex){
   hex <- fix_hex(hex)
   stopifnot(is_hex(hex))
-
-  url <- paste0(colour_url(), "color/", gsub("#", "", hex))
-
-  resp <- rvest::read_html(url)
+  req <- query_colorhex()
+  req <- httr2::req_url_path_append(
+    req, 
+    "color",
+    gsub("#", "", hex))
+  
+  resp <- httr2::req_perform(req)
+  resp <- httr2::resp_body_html(resp)
   tables <- rvest::html_nodes(resp, "table")
-
+  
   prim <- rvest::html_table(tables[1], fill = TRUE)[[1]]
   prim <- as.data.frame(t(prim))
   names(prim) <- as.character(unlist(prim[1,]))
   row.names(prim) <- NULL
   prim <- prim[-1,]
-
+  
   rows <- rvest::html_nodes(resp,
                             xpath = '//*[@class="colordvconline"]')
   rows <- rvest::html_text(rows)
   rows <- gsub(" \n", "", rows)
   rows <- fix_hex(rows)
-
+  
   ret <- list(
     hex = hex,
     space = prim,
@@ -85,13 +91,13 @@ get_color <- function(hex){
     related = rows[22:length(rows)],
     palettes = get_pals(resp, "palettecontainerlist narrow")
   )
-
+  
   if(length(tables) > 2){
     ret$triadic = fix_hex(chartable(tables[3]))
     ret$analogous = fix_hex(chartable(tables[4]))
     ret$complementary = fix_hex(chartable(tables[5]))
   }
-
+  
   colorhex(ret)
 }
 
@@ -101,7 +107,7 @@ colorhex <- function(x){
                             "complementary", "analogous",
                             "triadic", "shades", "tints",
                             "related", "palettes"))
-
+  
   structure(
     x,
     class = "colorhex"
@@ -133,18 +139,18 @@ plot.colorhex <- function(x,
                                    "analogous", "shades", "tints",
                                    "related"),
                           labels = TRUE, ...){
-
+  
   type <- match.arg(type,
                     c("complementary", "triadic",
                       "analogous", "shades", "tints", "related"),
                     several.ok = TRUE)
-
+  
   x <- lapply(type, function(y) if(y != "hex") c(x$hex, x[[y]]) else x[[y]])
   names(x) <- type
-
+  
   ncols <- length(type)
   nrows <- max(sapply(x, length))+.5
-
+  
   oldpar <- graphics::par(no.readonly = TRUE)
   on.exit(graphics::par(oldpar))
   graphics::par(mar = c(0, 0, 0, 0))
@@ -153,7 +159,7 @@ plot.colorhex <- function(x,
                  type = "n", xlab = "", ylab = "",
                  axes = FALSE
   )
-
+  
   for(i in 1:length(type)){
     tmp <- x[[type[i]]]
     graphics::text(1, i, type[i], cex = 1, pos = 2)
@@ -165,5 +171,5 @@ plot.colorhex <- function(x,
       }
     }
   }
-
+  
 }

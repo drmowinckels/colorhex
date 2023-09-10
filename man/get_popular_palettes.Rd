@@ -14,7 +14,7 @@ Retrieve the palettes most users have
 checked as favorites from www.color-hex.com
 }
 \examples{
-if(interactive()){
+if(curl::has_internet()){
 get_popular_palettes()
 }
 }

@@ -17,7 +17,7 @@ Get palette information from www.color-hex.com
 based on the palette id (can be found in the url)
 }
 \examples{
-if(interactive()){
+if(curl::has_internet()){
 get_palette(103107)
 
 # Lookup multiple palettes

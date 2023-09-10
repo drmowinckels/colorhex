@@ -7,12 +7,15 @@
 #' @export
 #'
 #' @examples
-#' if(interactive()){
+#' if(curl::has_internet()){
 #' get_latest_palettes()
 #' }
 get_latest_palettes <- function(){
-  url <- paste0(colour_url(), "color-palettes/")
-  resp <- rvest::read_html(url)
+  req <- query_colorhex()
+  req <- httr2::req_url_path_append(
+    req, "color-palettes/")
+  resp <- httr2::req_perform(req)
+  resp <- httr2::resp_body_html(resp)
   get_pals(resp)
 }
 
@@ -25,22 +28,31 @@ get_latest_palettes <- function(){
 #' @export
 #'
 #' @examples
-#' if(interactive()){
+#' if(curl::has_internet()){
 #' get_popular_palettes()
 #' }
 get_popular_palettes <- function(){
-  url <- paste0(colour_url(), "color-palettes/popular.php")
-  resp <- rvest::read_html(url)
+  req <- query_colorhex()
+  req <- httr2::req_url_path_append(
+    req, 
+    "color-palettes",
+    "popular.php")
+  resp <- httr2::req_perform(req)
+  resp <- httr2::resp_body_html(resp)
   get_pals(resp)
 }
 
 get_pal <- function(id){
-  url <- paste0(colour_url(), "color-palette/", id)
-  resp <- rvest::read_html(url)
-
+  req <- query_colorhex()
+  req <- httr2::req_url_path_append(
+    req, 
+    "color-palette",
+    id)
+  resp <- httr2::req_perform(req)
+  resp <- httr2::resp_body_html(resp)
+  
   tables <- rvest::html_nodes(resp, "table")
   tables <- rvest::html_table(tables[1], fill = TRUE)[[1]]
-
 
   palettehex(
     gsub(" Color Palette", "",
@@ -61,7 +73,7 @@ get_pal <- function(id){
 #' @export
 #'
 #' @examples
-#' if(interactive()){
+#' if(curl::has_internet()){
 #' get_palette(103107)
 #'
 #' # Lookup multiple palettes

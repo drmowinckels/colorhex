@@ -61,7 +61,7 @@ can be made for the scale.
 
 }}
 \examples{
-if(interactive()){
+if(curl::has_internet()){
 library(ggplot2)
 
 x <- get_popular_palettes()

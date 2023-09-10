@@ -12,13 +12,6 @@ is_hex <- function(x){
   grepl("^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$", x)
 }
 
-colour_url <- function(full = TRUE){
-  url <- "www.color-hex.com"
-  if(!full)
-    return(url)
-  paste0("https://", url, "/")
-}
-
 
 chartable <- function(table){
   x <- rvest::html_table(table)[[1]]
@@ -59,4 +52,8 @@ nchar <- function(x){
   j <- strsplit(x, "")
   j <- lapply(j, length)
   unlist(j)
+}
+
+randcol <- function(){
+  sample(1:255, 1)
 }

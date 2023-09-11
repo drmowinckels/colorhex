@@ -13,11 +13,6 @@ is_hex <- function(x){
 }
 
 
-colour_url <- function(){
-  "https://www.color-hex.com/"
-}
-
-
 chartable <- function(table){
   x <- rvest::html_table(table)[[1]]
   as.character(x[-1, ])[-1]
@@ -25,7 +20,7 @@ chartable <- function(table){
 
 strip_html <- function(x){
     rvest::html_text(
-      xml2::read_html(x)
+      rvest::read_html(x)
     )
 }
 
@@ -43,10 +38,13 @@ get_bkg_color <- function(x){
   x <- sapply(x, function(x) x[2])
 
   x <- gsub(';|\\\">|</div>| ', '', x)
-  fix_hex(x)
+  sapply(x, fix_hex)
 }
 
 fix_hex <- function(x){
+  if(!is_hex(x)){
+    cli::cli_abort("'{x}' is not a valid hexidecimal colour.")
+  }
   indx <- ifelse(nchar(x) == 4, TRUE, FALSE)
 
   x[indx] <-  paste0(x[indx], gsub("#", "", x[indx]))
@@ -57,4 +55,8 @@ nchar <- function(x){
   j <- strsplit(x, "")
   j <- lapply(j, length)
   unlist(j)
+}
+
+randcol <- function(){
+  sample(1:255, 1)
 }

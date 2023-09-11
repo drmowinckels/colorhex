@@ -10,9 +10,11 @@ get_popular_palettes()
 data.frame with name, id and colours
 }
 \description{
-Retrieve the palettes most users have favourited
-from www.color-hex.com
+Retrieve the palettes most users have
+checked as favorites from www.color-hex.com
 }
 \examples{
+if(curl::has_internet()){
 get_popular_palettes()
+}
 }

@@ -7,43 +7,47 @@
 #' @export
 #'
 #' @examples
+#' if(curl::has_internet()){
 #' get_latest_palettes()
+#' }
 get_latest_palettes <- function(){
-  url <- paste0(colour_url(), "color-palettes/")
-  resp <- xml2::read_html(url)
+  req <- query_colorhex()
+  if(is.null(req))
+    return(invisible(NULL))
+  req <- httr2::req_url_path_append(
+    req, "color-palettes")
+  if(!status_ok(req))
+    return(invisible(NULL))
+  resp <- httr2::req_perform(req)
+  resp <- httr2::resp_body_html(resp)
   get_pals(resp)
 }
 
 #' Get most popular palettes
 #'
 #' Retrieve the palettes most users have
-#' checked as favourites from www.color-hex.com
+#' checked as favorites from www.color-hex.com
 #'
 #' @return data.frame with name, id and colours
 #' @export
 #'
 #' @examples
+#' if(curl::has_internet()){
 #' get_popular_palettes()
+#' }
 get_popular_palettes <- function(){
-  url <- paste0(colour_url(), "color-palettes/popular.php")
-  resp <- xml2::read_html(url)
+  req <- query_colorhex()
+  if(is.null(req))
+    return(invisible(NULL))
+  req <- httr2::req_url_path_append(
+    req,
+    "color-palettes",
+    "popular.php")
+  if(!status_ok(req))
+    return(invisible(NULL))
+  resp <- httr2::req_perform(req)
+  resp <- httr2::resp_body_html(resp)
   get_pals(resp)
-}
-
-get_pal <- function(id){
-  url <- paste0(colour_url(), "color-palette/", id)
-  resp <- xml2::read_html(url)
-
-  tables <- rvest::html_nodes(resp, "table")
-  tables <- rvest::html_table(tables[1], fill = TRUE)[[1]]
-
-
-  palettehex(
-    gsub(" Color Palette", "",
-         rvest::html_text(rvest::html_nodes(resp, "h1"))),
-    id,
-    list(tables[,2])
-  )
 }
 
 #' Get palettes from id
@@ -57,11 +61,13 @@ get_pal <- function(id){
 #' @export
 #'
 #' @examples
+#' if(curl::has_internet()){
 #' get_palette(103107)
 #'
 #' # Lookup multiple palettes
 #' id <- c(103161, 103107)
 #' get_palette(id)
+#' }
 get_palette <- function(id){
   x <- lapply(id, get_pal)
   do.call(rbind, x)
@@ -95,6 +101,31 @@ plot.palettehex <- function(x, ...){
 }
 
 # helpers ----
+
+get_pal <- function(id){
+  req <- query_colorhex()
+  if(is.null(req))
+    return(invisible(NULL))
+  req <- httr2::req_url_path_append(
+    req,
+    "color-palette",
+    id)
+  if(!status_ok(req))
+    return(invisible(NULL))
+  resp <- httr2::req_perform(req)
+  resp <- httr2::resp_body_html(resp)
+
+  tables <- rvest::html_nodes(resp, "table")
+  tables <- rvest::html_table(tables[1], fill = TRUE)[[1]]
+
+  palettehex(
+    gsub(" Color Palette", "",
+         rvest::html_text(rvest::html_nodes(resp, "h1"))),
+    id,
+    list(tables[,2])
+  )
+}
+
 get_pals <- function(resp, class = "palettecontainerlist"){
   path <- paste0('//*[@class="',class, '"]')
   pal <- rvest::html_nodes(resp, xpath = path)

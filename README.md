@@ -7,8 +7,7 @@
 
 [![CRAN
 status](https://www.r-pkg.org/badges/version/colorhex)](https://CRAN.R-project.org/package=colorhex)
-[![R-CMD-check](https://github.com/Athanasiamo/colorhex/workflows/R-CMD-check/badge.svg)](https://github.com/Athanasiamo/colorhex/actions)
-[![R-CMD-check](https://github.com/Athanasiamo/colorhex/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Athanasiamo/colorhex/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/drmowinckels/colorhex/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/drmowinckels/colorhex/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The goal of colorhex is to create an interface to
@@ -28,8 +27,8 @@ You can install the development version from
 [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("Athanasiamo/colorhex", ref = "main")
+# install.packages("remotes")
+remotes::install_github("drmowinckels/colorhex", ref = "main")
 ```
 
 ## Example
@@ -59,15 +58,15 @@ x
 #>  [1] "#ff80ed" "#065535" "#000000" "#133337" "#ffc0cb" "#ffffff" "#ffe4e1"
 #>  [8] "#008080" "#ff0000" "#e6e6fa" "#ffd700" "#00ffff" "#ffa500" "#0000ff"
 #> [15] "#ff7373" "#c6e2ff" "#40e0d0" "#b0e0e6" "#d3ffce" "#f0f8ff" "#666666"
-#> [22] "#faebd7" "#bada55" "#003366" "#fa8072" "#ffb6c1" "#ffff00" "#c0c0c0"
-#> [29] "#c39797" "#800080" "#800000" "#00ff00" "#7fffd4" "#eeeeee" "#cccccc"
-#> [36] "#fff68f" "#f08080" "#20b2aa" "#ffc3a0" "#333333" "#66cdaa" "#c0d6e4"
-#> [43] "#ff6666" "#ff00ff" "#cbbeb5" "#ffdab9" "#ff7f50" "#468499" "#afeeee"
-#> [50] "#008000" "#b4eeb4" "#00ced1" "#f6546a" "#660066" "#0e2f44" "#b6fcd5"
-#> [57] "#696969" "#daa520" "#f5f5f5" "#990000" "#6897bb" "#000080" "#808080"
-#> [64] "#088da5" "#f5f5dc" "#8b0000" "#8a2be2" "#dddddd" "#ccff00" "#ffff66"
-#> [71] "#2acaea" "#101010" "#81d8d0" "#0a75ad" "#ff4040" "#66cccc" "#420420"
-#> [78] "#a0db8e" "#ff1493" "#cc0000" "#3399ff" "#999999" "#00ff7f" "#794044"
+#> [22] "#faebd7" "#bada55" "#fa8072" "#003366" "#ffb6c1" "#c0c0c0" "#ffff00"
+#> [29] "#800000" "#800080" "#c39797" "#00ff00" "#7fffd4" "#fff68f" "#eeeeee"
+#> [36] "#cccccc" "#f08080" "#20b2aa" "#ffc3a0" "#333333" "#66cdaa" "#c0d6e4"
+#> [43] "#ff6666" "#ff00ff" "#cbbeb5" "#ffdab9" "#468499" "#ff7f50" "#afeeee"
+#> [50] "#b4eeb4" "#00ced1" "#008000" "#660066" "#f6546a" "#0e2f44" "#b6fcd5"
+#> [57] "#990000" "#696969" "#f5f5f5" "#daa520" "#000080" "#6897bb" "#808080"
+#> [64] "#f5f5dc" "#088da5" "#8b0000" "#8a2be2" "#81d8d0" "#ccff00" "#ffff66"
+#> [71] "#ff4040" "#dddddd" "#2acaea" "#101010" "#0a75ad" "#ff1493" "#420420"
+#> [78] "#66cccc" "#a0db8e" "#999999" "#794044" "#3399ff" "#cc0000" "#00ff7f"
 scales::show_col(x)
 ```
 

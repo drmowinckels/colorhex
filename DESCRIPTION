@@ -1,7 +1,7 @@
 Package: colorhex
 Type: Package
 Title: Colors and Palettes from Color-Hex
-Version: 0.1.2
+Version: 0.1.4
 Authors@R: c(
             person("Athanasia Mo", "Mowinckel", 
                     email = "a.m.mowinckel@psykologi.uio.no", 
@@ -19,14 +19,16 @@ Description: The website <https://www.color-hex.com> is a great resource of hex 
 License: MIT + file LICENSE
 Encoding: UTF-8
 Imports: 
-    rvest,
-    xml2,
-    grDevices,
+    cli,
+    curl,
+    ggplot2,
     graphics,
-    ggplot2
-RoxygenNote: 7.1.1
-URL: https://github.com/Athanasiamo/colorhex
-BugReports: https://github.com/Athanasiamo/colorhex/issues
+    grDevices,
+    httr2,
+    rvest
+RoxygenNote: 7.2.3
+URL: https://github.com/drmowinckels/colorhex
+BugReports: https://github.com/drmowinckels/colorhex/issues
 Suggests: 
     spelling,
     scales

@@ -18,6 +18,7 @@
 #' @name scale-colorhex
 #' @return a ggplot2-proto
 #' @examples
+#' if(curl::has_internet()){
 #' library(ggplot2)
 #'
 #' x <- get_color("#008080")
@@ -41,6 +42,7 @@
 #' ggplot(mtcars, aes(mpg, disp, colour = factor(cyl))) +
 #'    geom_point() +
 #'    scale_color_colorhex_d(x, "shades")
+#'  }
 NULL
 #> NULL
 

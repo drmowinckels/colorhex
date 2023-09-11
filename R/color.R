@@ -8,13 +8,24 @@
 #' @export
 #'
 #' @examples
+#' if(curl::has_internet()){
 #' get_popular_colors()
+#' }
 get_popular_colors <- function(){
-  url <- paste0(colour_url(), "popular-colors.php")
-  resp <- xml2::read_html(url)
+  req <- httr2::request(colour_url())
+  if(is.null(req))
+    return(invisible(NULL))
+  req <- httr2::req_url_path_append(
+    req,
+    "popular-colors.php")
+  if(!status_ok(req))
+    return(invisible(NULL))
 
-  cols <- rvest::html_nodes(resp,
-                            xpath = '//*[@class="colordva"]')
+  resp <- httr2::req_perform(req)
+  resp <- httr2::resp_body_html(resp)
+  cols <- rvest::html_nodes(
+    resp,
+    xpath = '//*[@class="colordva"]')
   cols <- as.character(cols)
   get_bkg_color(cols)
 }
@@ -33,10 +44,6 @@ get_random_color <- function(){
                  maxColorValue = 255)
 }
 
-randcol <- function(){
-  sample(1:255, 1)
-}
-
 #' Get color information
 #'
 #' Get color information from www.color-hex.com
@@ -48,19 +55,28 @@ randcol <- function(){
 #' @export
 #'
 #' @examples
+#' if(curl::has_internet()){
 #' get_color("#470f0f")
-#' get_color("#f2f2f2")
+#' }
 get_color <- function(hex){
   hex <- fix_hex(hex)
-  stopifnot(is_hex(hex))
+  req <- query_colorhex()
+  if(is.null(req))
+    return(invisible(NULL))
 
-  url <- paste0(colour_url(), "color/", gsub("#", "", hex))
+  req <- httr2::req_url_path_append(
+    req,
+    "color",
+    gsub("^#", "", hex))
 
-  resp <- xml2::read_html(url)
+  if(!status_ok(req))
+    return(invisible(NULL))
+
+  resp <- httr2::req_perform(req)
+  resp <- httr2::resp_body_html(resp)
   tables <- rvest::html_nodes(resp, "table")
-
-  prim <- rvest::html_table(tables[1], fill = TRUE)[[1]]
-  prim <- as.data.frame(t(prim))
+  tables <- lapply(tables, rvest::html_table, fill = TRUE)
+  prim <- as.data.frame(t(tables[[1]]))
   names(prim) <- as.character(unlist(prim[1,]))
   row.names(prim) <- NULL
   prim <- prim[-1,]
@@ -69,12 +85,12 @@ get_color <- function(hex){
                             xpath = '//*[@class="colordvconline"]')
   rows <- rvest::html_text(rows)
   rows <- gsub(" \n", "", rows)
-  rows <- fix_hex(rows)
+  rows <- sapply(rows, fix_hex)
 
   ret <- list(
     hex = hex,
     space = prim,
-    base = rvest::html_table(tables[2], fill = TRUE)[[1]],
+    base = tables[[2]],
     triadic = NA_character_,
     analogous = NA_character_,
     complementary = NA_character_,
@@ -85,9 +101,13 @@ get_color <- function(hex){
   )
 
   if(length(tables) > 2){
-    ret$triadic = fix_hex(chartable(tables[3]))
-    ret$analogous = fix_hex(chartable(tables[4]))
-    ret$complementary = fix_hex(chartable(tables[5]))
+    ex <- lapply(3:5, function(x){
+      j <- unique(unlist(tables[[x]]))
+      sapply(j[j!=""], fix_hex)
+    })
+    ret$triadic = ex[[1]]
+    ret$analogous = ex[[2]]
+    ret$complementary = ex[[3]]
   }
 
   colorhex(ret)

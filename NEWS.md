@@ -1,3 +1,7 @@
+
+# colorhex 0.1.4
+- fixes failure of build if server is unresponsive
+
 # colorhex 0.1.1
 - cran submission
 

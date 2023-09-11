@@ -14,5 +14,7 @@ Retrieve the most recently made palettes
 from www.color-hex.com
 }
 \examples{
+if(curl::has_internet()){
 get_latest_palettes()
+}
 }

@@ -18,7 +18,7 @@ based on the palette id (can be found in the url)"><!-- mathjax --><script src="
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">colorhex</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.4</span>
       </span>
     </div>
 
@@ -30,7 +30,7 @@ based on the palette id (can be found in the url)"><!-- mathjax --><script src="
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
-  <a href="https://github.com/Athanasiamo/colorhex/" class="external-link">
+  <a href="https://github.com/drmowinckels/colorhex/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -45,7 +45,7 @@ based on the palette id (can be found in the url)"><!-- mathjax --><script src="
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Get palettes from id</h1>
-    <small class="dont-index">Source: <a href="https://github.com/Athanasiamo/colorhex/blob/HEAD/R/palette.R" class="external-link"><code>R/palette.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drmowinckels/colorhex/blob/HEAD/R/palette.R" class="external-link"><code>R/palette.R</code></a></small>
     <div class="hidden name"><code>get_palette.Rd</code></div>
     </div>
 
@@ -73,13 +73,13 @@ based on the palette id (can be found in the url)</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">get_palette</span><span class="op">(</span><span class="fl">103107</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           name     id                                     palette</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 Virtual Guru 103107 #ffffff, #a0e2e4, #ffc643, #2abfc9, #000000</span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span><span class="op">(</span><span class="fu">curl</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/curl/man/nslookup.html" class="external-link">has_internet</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">{</span></span></span>
+<span class="r-in"><span><span class="fu">get_palette</span><span class="op">(</span><span class="fl">103107</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Lookup multiple palettes</span></span></span>
 <span class="r-in"><span><span class="va">id</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">103161</span>, <span class="fl">103107</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">get_palette</span><span class="op">(</span><span class="va">id</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                  name     id</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1 Garden Follies Over The Moon Tattoo 103161</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2                        Virtual Guru 103107</span>

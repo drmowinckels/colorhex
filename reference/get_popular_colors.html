@@ -19,7 +19,7 @@ This function will retrieve all of these."><!-- mathjax --><script src="https://
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">colorhex</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.4</span>
       </span>
     </div>
 
@@ -31,7 +31,7 @@ This function will retrieve all of these."><!-- mathjax --><script src="https://
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
-  <a href="https://github.com/Athanasiamo/colorhex/" class="external-link">
+  <a href="https://github.com/drmowinckels/colorhex/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -46,7 +46,7 @@ This function will retrieve all of these."><!-- mathjax --><script src="https://
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Get popular colour</h1>
-    <small class="dont-index">Source: <a href="https://github.com/Athanasiamo/colorhex/blob/HEAD/R/color.R" class="external-link"><code>R/color.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drmowinckels/colorhex/blob/HEAD/R/color.R" class="external-link"><code>R/color.R</code></a></small>
     <div class="hidden name"><code>get_popular_colors.Rd</code></div>
     </div>
 
@@ -69,19 +69,31 @@ This function will retrieve all of these.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">get_popular_colors</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "#ff80ed" "#065535" "#000000" "#133337" "#ffc0cb" "#ffffff" "#ffe4e1"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [8] "#008080" "#ff0000" "#e6e6fa" "#ffd700" "#00ffff" "#ffa500" "#0000ff"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [15] "#ff7373" "#c6e2ff" "#40e0d0" "#b0e0e6" "#d3ffce" "#f0f8ff" "#666666"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [22] "#faebd7" "#bada55" "#003366" "#fa8072" "#ffb6c1" "#ffff00" "#c0c0c0"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [29] "#c39797" "#800080" "#800000" "#00ff00" "#7fffd4" "#eeeeee" "#cccccc"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [36] "#fff68f" "#f08080" "#20b2aa" "#ffc3a0" "#333333" "#66cdaa" "#c0d6e4"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [43] "#ff6666" "#ff00ff" "#ffdab9" "#cbbeb5" "#ff7f50" "#468499" "#afeeee"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [50] "#008000" "#b4eeb4" "#00ced1" "#f6546a" "#660066" "#0e2f44" "#b6fcd5"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [57] "#daa520" "#696969" "#f5f5f5" "#990000" "#6897bb" "#000080" "#808080"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [64] "#088da5" "#f5f5dc" "#8b0000" "#8a2be2" "#dddddd" "#ccff00" "#ffff66"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [71] "#2acaea" "#101010" "#81d8d0" "#0a75ad" "#ff4040" "#66cccc" "#420420"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [78] "#a0db8e" "#ff1493" "#cc0000" "#3399ff" "#999999" "#00ff7f" "#794044"</span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span><span class="op">(</span><span class="fu">curl</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/curl/man/nslookup.html" class="external-link">has_internet</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">{</span></span></span>
+<span class="r-in"><span><span class="fu">get_popular_colors</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   #ff80ed   #065535   #000000   #133337   #ffc0cb   #ffffff   #ffe4e1   #008080 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> "#ff80ed" "#065535" "#000000" "#133337" "#ffc0cb" "#ffffff" "#ffe4e1" "#008080" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   #ff0000   #e6e6fa   #ffd700   #00ffff   #ffa500   #0000ff   #ff7373   #40e0d0 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> "#ff0000" "#e6e6fa" "#ffd700" "#00ffff" "#ffa500" "#0000ff" "#ff7373" "#40e0d0" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   #c6e2ff   #b0e0e6   #d3ffce   #f0f8ff   #666666   #faebd7   #bada55   #fa8072 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> "#c6e2ff" "#b0e0e6" "#d3ffce" "#f0f8ff" "#666666" "#faebd7" "#bada55" "#fa8072" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   #003366   #ffb6c1   #c0c0c0   #ffff00   #800000   #800080   #c39797   #00ff00 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> "#003366" "#ffb6c1" "#c0c0c0" "#ffff00" "#800000" "#800080" "#c39797" "#00ff00" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   #7fffd4   #cccccc   #fff68f   #eeeeee   #20b2aa   #f08080   #ffc3a0   #333333 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> "#7fffd4" "#cccccc" "#fff68f" "#eeeeee" "#20b2aa" "#f08080" "#ffc3a0" "#333333" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   #66cdaa   #c0d6e4   #ff6666   #ff00ff   #ffdab9   #cbbeb5   #ff7f50   #468499 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> "#66cdaa" "#c0d6e4" "#ff6666" "#ff00ff" "#ffdab9" "#cbbeb5" "#ff7f50" "#468499" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   #afeeee   #b4eeb4   #00ced1   #008000   #660066   #f6546a   #0e2f44   #b6fcd5 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> "#afeeee" "#b4eeb4" "#00ced1" "#008000" "#660066" "#f6546a" "#0e2f44" "#b6fcd5" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   #696969   #990000   #f5f5f5   #daa520   #6897bb   #000080   #808080   #f5f5dc </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> "#696969" "#990000" "#f5f5f5" "#daa520" "#6897bb" "#000080" "#808080" "#f5f5dc" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   #088da5   #8b0000   #8a2be2   #ffff66   #81d8d0   #ff4040   #ccff00   #dddddd </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> "#088da5" "#8b0000" "#8a2be2" "#ffff66" "#81d8d0" "#ff4040" "#ccff00" "#dddddd" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   #2acaea   #101010   #0a75ad   #ff1493   #420420   #a0db8e   #66cccc   #999999 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> "#2acaea" "#101010" "#0a75ad" "#ff1493" "#420420" "#a0db8e" "#66cccc" "#999999" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   #794044   #3399ff   #cc0000   #00ff7f </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> "#794044" "#3399ff" "#cc0000" "#00ff7f" </span>
 </code></pre></div>
     </div>
   </div>

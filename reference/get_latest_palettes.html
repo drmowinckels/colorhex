@@ -18,7 +18,7 @@ from www.color-hex.com"><!-- mathjax --><script src="https://cdnjs.cloudflare.co
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">colorhex</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.4</span>
       </span>
     </div>
 
@@ -30,7 +30,7 @@ from www.color-hex.com"><!-- mathjax --><script src="https://cdnjs.cloudflare.co
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
-  <a href="https://github.com/Athanasiamo/colorhex/" class="external-link">
+  <a href="https://github.com/drmowinckels/colorhex/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -45,7 +45,7 @@ from www.color-hex.com"><!-- mathjax --><script src="https://cdnjs.cloudflare.co
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Get latest palettes</h1>
-    <small class="dont-index">Source: <a href="https://github.com/Athanasiamo/colorhex/blob/HEAD/R/palette.R" class="external-link"><code>R/palette.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drmowinckels/colorhex/blob/HEAD/R/palette.R" class="external-link"><code>R/palette.R</code></a></small>
     <div class="hidden name"><code>get_latest_palettes.Rd</code></div>
     </div>
 
@@ -67,89 +67,91 @@ from www.color-hex.com</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">get_latest_palettes</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                name      id</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1          Weeds amongst the Rubble 1026515</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                  Africa is Plural 1026514</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                       Meadow Eyes 1026513</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4         Ready to Usurp the Throne 1026512</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                 My wedding colors 1026511</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                   Seychelles Flag 1026510</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7                  Leather Memories 1026509</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8                 Nighttime Royalty 1026508</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9       Dawn Wisteria in the Meadow 1026507</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10                           RVegas 1026506</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11               Nighttime Drowning 1026505</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12                     Dark Corners 1026504</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13               Christmas Costumes 1026503</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14                       Generosity 1026502</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15          Windowsill Paper Cranes 1026501</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16           I feel like a smoothie 1026500</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17                     Maroon ichor 1026499</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18 Sun Bleached Memories of Meadows 1026498</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19                        Ess Luxor 1026497</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20                         Aotearoa 1026496</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21                        Space Out 1026495</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22                 Strawberry Grief 1026494</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23                   Seaside Rubies 1026493</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24    You in My Salt-Sprayed Dreams 1026492</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25                       Froggyness 1026491</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26                  I saw a rainbow 1026490</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27                       Just Blues 1026489</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28                   Meraki  Desing 1026488</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29                           scale5 1026487</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30                           Artoce 1026486</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31                   Artoce Company 1026485</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32                      Jill Office 1026484</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 33   notes background colors part 4 1026483</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 34   notes background colors part 3 1026482</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35   notes background colors part 2 1026481</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 36   notes background colors part 1 1026480</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 37             stabilo highlighters 1026479</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 38                     CNA option 3 1026478</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 39                      Aprendizaje 1026477</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 40                  the bug exhibit 1026476</span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span><span class="op">(</span><span class="fu">curl</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/curl/man/nslookup.html" class="external-link">has_internet</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">{</span></span></span>
+<span class="r-in"><span><span class="fu">get_latest_palettes</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                     name      id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                      Pumpkin Pie Slice 1030823</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                           Creme Brulee 1030822</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                          Challah Bread 1030821</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                   ProjectBlueAndOrange 1030820</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                              Georgette 1030819</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                             Georgetown 1030818</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7                           Overreaction 1030817</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8                               Infiniti 1030816</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9                               Infinity 1030815</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10                                  Xhgk 1030814</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11                         Warm Sunset 2 1030813</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12                    Returning to Earth 1030812</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13                Rodeo Drive Palm Trees 1030811</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14 Cloudscape After Rain Soaked Twilight 1030810</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15                           On Broadway 1030809</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16                         Plump Peaches 1030808</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17              Cherry Blossom Driftings 1030807</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18               Senna League of Legends 1030806</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19                     Mood in Dysphoria 1030805</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20                    Spring Up and Sing 1030804</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21                          Sky Gradient 1030803</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22               Wings of FIre First Arc 1030802</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23                                  MCVA 1030801</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24                          AudreyBitesU 1030800</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25                           Virgo Libra 1030799</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26                       Fall Wedding TN 1030798</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27                       Fall Wedding NT 1030797</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28            The Greenies-Color Palette 1030796</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29                         Sliding Doors 1030795</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30                         Snowpocalypse 1030794</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31                           This No Fit 1030793</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32                  The Cornflower Field 1030792</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33                                  Mize 1030791</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 34                             Sailbreak 1030790</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35                            Septionary 1030788</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 36                            Atomicwave 1030787</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 37                            Quillville 1030786</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 38                              Bullshit 1030785</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 39                            Cornerwell 1030784</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 40                     Thistle Do Nicely 1030783</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                        palette</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  #aba1a1, #696161, #473838, #637734, #8ea56c</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  #139fd8, #fdc533, #6d32fe, #9fd813, #eeeeee</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  #6c7e42, #7ea160, #b4d7a4, #90a383, #7b907a</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  #beaeae, #8f8585, #665353, #701616, #650404</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  #dbdffc, #a0be92, #fd9559, #ffd1d1, #f4e99a</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  #013b89, #fdda55, #da1d1f, #fefffe, #017b37</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7  #32251d, #4f3525, #64432e, #7c553b, #bc7a4f</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8  #b69f56, #9f7443, #975733, #80322c, #683022</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9  #f3dfff, #faf4fd, #e6efd2, #cde39c, #bdd48c</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10 #000000, #2627c6, #d7051e, #f9c928, #ffffff</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11 #465a6d, #33414e, #212426, #250f0f, #5d0505</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12 #b200e4, #2627c6, #006400, #d7051e, #d4af37</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13 #1919c9, #d7051e, #006400, #d4af37, #ffffff</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14 #d7051e, #d4af37, #1919c9, #000000, #ffffff</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15 #eeeeee, #fdfbfb, #faedd8, #f9e798, #efc982</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16 #f44336, #fff2cc, #f389ca, #8e2db8, #2986cc</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17 #c49307, #7c1618, #8f1111, #690000, #510f0f</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18 #fbc36c, #f9d59b, #f3eec1, #def088, #b9f999</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19 #ff0088, #0b24fb, #6e6969, #c3c9cd, #ffffff</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20 #f50909, #0b5394, #ffffff, #bbbbbb, #000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21 #073763, #103e6f, #103e7f, #103e8f, #103e9f</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22 #a32e4e, #dc2e6b, #eb7ba7, #ee5151, #cb2727</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23 #41a1e9, #7cb9e7, #ffd966, #f5d165, #74b159</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24 #eca840, #edbc46, #fdf5df, #a5ead0, #78d4b7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25 #8fce00, #5ae624, #7cc55c, #2db847, #8ae937</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26 #ff0000, #f78506, #eff50a, #50f10a, #0eacef</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27 #a4aeec, #a4bcec, #a4c7ec, #add7f0, #ade6f0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28 #9979c2, #be79c2, #797ec2, #f691a4, #f4bfc9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29 #16537e, #cfe2f3, #9fc5e8, #6fa8dc, #3d85c6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30 #0088cc, #0079c0, #3b5998, #f97300, #ff7f01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31 #eeeeee, #dddddd, #cccccc, #3b5998, #aaaaaa</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32 #15a9c3, #68c6ba, #e0393c, #bbbbbb, #aaaaaa</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 33 #fff0f5, #fff5ee, #fff8dc, #fff9e6, #fffde7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 34 #ffb6c1, #ffc3a0, #ffebf0, #ffe0e5, #ffdab9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35 #fffff0, #f0f8ff, #f5fffa, #e0ffff, #fffafa</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 36 #fdf5e6, #fafad2, #fffaf0, #f5f5dc, #f0fff0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 37 #ce97fb, #f6a5eb, #faa99d, #fddf7e, #9bfbe1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 38 #6191bc, #c0d1df, #fffaed, #eaa966, #d28535</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 39 #3d5d8a, #3d80b3, #0b6f4b, #5449a7, #faf6f0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 40 #d09840, #b25c20, #bb3104, #389319, #2ea4e0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  #7f3204, #e88a06, #ba733b, #edb173, #fde1ba</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  #0e0403, #601406, #a94200, #ebac21, #ffffd1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  #5c280a, #8c481b, #d17e33, #f5c976, #f6ebd8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  #0092ff, #ff9600, #005da2, #53b6ff, #407aa6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  #898f80, #a1a599, #b8bcb3, #d0d2cc, #e7e9e6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  #4f3a34, #72615d, #958985, #b9b0ae, #dcd8d6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7  #e4c420, #e9d04d, #efdc79, #f4e7a6, #faf3d2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8  #e1e3e0, #e7e9e6, #edeeec, #f3f4f3, #f9f9f9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9  #222831, #4e535a, #7a7e83, #a7a9ad, #d3d4d6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10 #0b2231, #f8f107, #d50556, #051533, #ea0b0b</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11 #d68633, #e9b828, #ea9494, #d5a6bd, #6e628e</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12 #f1912c, #f9cb9c, #ffa1a1, #c86495, #803e61</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13 #555ea0, #9699e7, #b6b7f1, #b6c444, #d2e721</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14 #d2d0f6, #a383a7, #f3c3b1, #ecd2d3, #c6bce2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15 #418ac0, #01a9d0, #f5c238, #0098e9, #433174</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16 #b84467, #ec7172, #f1a560, #f5bf7d, #f6cb69</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17 #e4f5ea, #f0dfdd, #c3688b, #edc4d2, #ccb3c2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18 #f0fbf7, #2c282f, #9dd1a5, #afb9b1, #576457</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19 #7e47ee, #8ebfc7, #e698cf, #bfcf45, #492372</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20 #ffefc1, #f9a6cf, #b6d7f5, #bceea6, #ffd2a2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21 #ff9e00, #ff0000, #b5007d, #21429c, #0071ff</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22 #c93f10, #0e41d9, #1ac857, #ffa300, #07010d</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23 #fff9f7, #e8f0fd, #fde3ed, #c0c7b5, #4f484c</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24 #e4b570, #6d5f4e, #b570e4, #e47b70, #d9e470</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25 #b3bfa3, #95a988, #66765b, #d4a3b9, #ca6087</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26 #800021, #9b5017, #1c2e08, #963417, #a43425</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27 #c18434, #dbad8c, #8d4e2f, #a2a182, #68602f</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28 #007a74, #f2e8cf, #fad02e, #c5a3b4, #7ecea1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29 #f1c232, #6aa84f, #f3f6f4, #3d85c6, #a64d79</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30 #536595, #8dd0ea, #cbe2e8, #79adc2, #3d6e6b</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31 #221313, #e69138, #fce5cd, #cfe2f3, #1765ab</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32 #c1dff9, #9fb3e5, #748cdb, #b3c8ed, #c7ddf6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33 #f58d11, #ae1feb, #ecee10, #ec0faa, #2bf618</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 34 #0b19f5, #11ebd4, #1a96f6, #cefffd, #3e2890</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35 #eba325, #17e046, #142ee6, #ed8207, #0ee5a6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 36 #17ff2c, #ff19ab, #14ecff, #ff9e19, #4717ff</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 37 #2677eb, #2e1ce5, #17d6cc, #641adf, #19bdda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 38 #811212, #832e2e, #752d2d, #944747, #bb2626</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 39 #eb2a2a, #24d5e3, #4ad31f, #d917a7, #9a26e7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 40 #a29cb8, #636b83, #6d8f95, #9fbbba, #c7d2c6</span>
 </code></pre></div>
     </div>
   </div>

@@ -12,8 +12,12 @@
 #' }
 get_latest_palettes <- function(){
   req <- query_colorhex()
+  if(is.null(req))
+    return(invisible(NULL))
   req <- httr2::req_url_path_append(
-    req, "color-palettes/")
+    req, "color-palettes")
+  if(!status_ok(req))
+    return(invisible(NULL))
   resp <- httr2::req_perform(req)
   resp <- httr2::resp_body_html(resp)
   get_pals(resp)
@@ -33,33 +37,17 @@ get_latest_palettes <- function(){
 #' }
 get_popular_palettes <- function(){
   req <- query_colorhex()
+  if(is.null(req))
+    return(invisible(NULL))
   req <- httr2::req_url_path_append(
-    req, 
+    req,
     "color-palettes",
     "popular.php")
+  if(!status_ok(req))
+    return(invisible(NULL))
   resp <- httr2::req_perform(req)
   resp <- httr2::resp_body_html(resp)
   get_pals(resp)
-}
-
-get_pal <- function(id){
-  req <- query_colorhex()
-  req <- httr2::req_url_path_append(
-    req, 
-    "color-palette",
-    id)
-  resp <- httr2::req_perform(req)
-  resp <- httr2::resp_body_html(resp)
-  
-  tables <- rvest::html_nodes(resp, "table")
-  tables <- rvest::html_table(tables[1], fill = TRUE)[[1]]
-
-  palettehex(
-    gsub(" Color Palette", "",
-         rvest::html_text(rvest::html_nodes(resp, "h1"))),
-    id,
-    list(tables[,2])
-  )
 }
 
 #' Get palettes from id
@@ -113,6 +101,31 @@ plot.palettehex <- function(x, ...){
 }
 
 # helpers ----
+
+get_pal <- function(id){
+  req <- query_colorhex()
+  if(is.null(req))
+    return(invisible(NULL))
+  req <- httr2::req_url_path_append(
+    req,
+    "color-palette",
+    id)
+  if(!status_ok(req))
+    return(invisible(NULL))
+  resp <- httr2::req_perform(req)
+  resp <- httr2::resp_body_html(resp)
+
+  tables <- rvest::html_nodes(resp, "table")
+  tables <- rvest::html_table(tables[1], fill = TRUE)[[1]]
+
+  palettehex(
+    gsub(" Color Palette", "",
+         rvest::html_text(rvest::html_nodes(resp, "h1"))),
+    id,
+    list(tables[,2])
+  )
+}
+
 get_pals <- function(resp, class = "palettecontainerlist"){
   path <- paste0('//*[@class="',class, '"]')
   pal <- rvest::html_nodes(resp, xpath = path)

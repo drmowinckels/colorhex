@@ -38,10 +38,13 @@ get_bkg_color <- function(x){
   x <- sapply(x, function(x) x[2])
 
   x <- gsub(';|\\\">|</div>| ', '', x)
-  fix_hex(x)
+  sapply(x, fix_hex)
 }
 
 fix_hex <- function(x){
+  if(!is_hex(x)){
+    cli::cli_abort("'{x}' is not a valid hexidecimal colour.")
+  }
   indx <- ifelse(nchar(x) == 4, TRUE, FALSE)
 
   x[indx] <-  paste0(x[indx], gsub("#", "", x[indx]))

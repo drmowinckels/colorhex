@@ -6,3 +6,7 @@
 ^cran-comments\.md$
 ^CRAN-RELEASE$
 ^CRAN-SUBMISSION$
+^colorhex\.Rproj$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
